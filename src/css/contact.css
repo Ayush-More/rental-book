@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Lobster&family=Lora:ital,wght@1,500&family=Play&family=Rajdhani:wght@300;700&display=swap');
+
+body, h1, h2, p, label, input, textarea, button {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+body {
+  background-image: url('book-s4.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: Arial, sans-serif;
+  margin-bottom: auto;
+  padding: 0;
+}
+
+.container1 {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 150px;
+}
+
+/* Style the contact section */
+.contact {
+  background-color: rgba(255, 255, 255, 0.79); 
+  border-radius: 10px;
+  padding:40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  margin-top: 20px;
+}
+
+h2 {
+  font-weight: 700;
+  font-family: 'Play', sans-serif;
+  font-size: 30px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+p {
+  font-family: 'Play', sans-serif;
+  font-size: 20px;
+  color: #666;
+}
+
+/* Style the contact form */
+#contact-form {
+  text-align: left;
+}
+
+label {
+  font-weight: bold;
+  display: block;
+  padding: 5px;
+  margin-top: 5px;
+  border: 2px solid rgba(255, 255, 255, .2);
+  border-radius: 10px;
+  font-size: 16px;
+  color: hsl(0, 0%, 0%);
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 5px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  padding: 5px;
+  margin-top: 5px;
+  border: 2px solid rgba(255, 255, 255, .2);
+border-radius: 10px;
+font-size: 16px;
+color: hsl(0, 0%, 0%);
+border-color:#333;
+
+}
+
+button[type="submit"] {
+  background-image: linear-gradient(to right, #232526 0%, #414345  51%, #232526  100%);
+    margin: 10px;
+    padding: 15px 45px;
+    text-align: center;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: block;
+    cursor: pointer;
+    font-size: 20px;
+    font-family: 'Acme', sans-serif;
+    max-width: fit-content;
+}
+
+button:hover {
+  background-position: right center; 
+  color: #fff;
+  text-decoration: none;
+}
+
+.container p{
+  font-family: 'Play', sans-serif;
+  font-size: large;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  color: #fff;
+ 
+}
+
+.footer {
+  margin-top: -30px;
+  background: #1D4350;
+  background: -webkit-linear-gradient(to right, #A43931, #1D4350); 
+  background: linear-gradient(to right, #A43931, #1D4350);
+  padding: 20px 0;
+  text-align: center;
+}
+
+.container {
+  margin-top: 40px;
+}
+
+.fit-picture1 {
+  width: 250px;
+  height: auto;
+}
+
+/*----------------*/
+.taskbar {
+  background: #1D4350;
+  background: -webkit-linear-gradient(to right, #A43931, #1D4350);
+  background: linear-gradient(to right, #A43931, #1D4350); 
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  color: hsl(0, 4%, 5%);
+}
+
+.logo img {
+  cursor: pointer;
+  width: auto;
+  height: 50px;
+  margin-right: 20px;
+}
+
+.navigation ul {
+  list-style:none;
+  display: flex;
+  gap: 40px;
+}
+
+.navigation li {
+
+  align-content: end;
+  font-size: 20px;
+  font-family: 'Acme', sans-serif;
+ 
+}
+
+.navigation a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s;
+  font-size: 25px;
+}
+
+.navigation a:hover {
+  color: #0056b3;
+}
+
+.user-profile img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  
+}
+
+.user-profile p{
+  color: #b53f0c;
+  font-family:'Play', sans-serif;
+  font-size: 30px;
+
+}
+
+.nav-act a{
+  color: #f67301;
+}

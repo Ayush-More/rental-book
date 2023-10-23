@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Lobster&family=Lora:ital,wght@1,500&family=Play&family=Rajdhani:wght@300;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+/* body{
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    background: url(./../images/back1.png);
+    background-size: cover;
+    background-position: center;
+} */
+
+.wrapper{
+    width: 420px;   
+    background: transparent;
+    border:2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(50px);
+    
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    color: #fff;
+    border-radius: 10px;
+    padding: 30px 40px;
+    border-color: hsl(22, 93%, 48%);
+} 
+.wrapper h1{
+    border-color: orangered;
+    font-size: 36px;
+    text-align: center;
+}
+.wrapper .input-box{
+    width: 100%;
+    height: 60px;
+    position: relative;
+    margin-top: 20px;
+}
+.input-box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 10px;
+    font-size: 16px;
+    color: hsl(0, 0%, 100%);
+    padding: 20px 40px 20px 20px;
+}
+.input-box input::placeholder{
+    color: #fff;
+
+}
+.wrapper .remember-forgot{
+    display: flex;
+    justify-content: space-between;
+    font-size: 14.5px;
+    margin: 15px 5px 15px;
+}
+.remember-forgot label input{
+accent-color: #fff;
+margin-right: 3px;
+}
+.remember-forgot a {
+    color: #fff;
+    text-decoration: none;
+}
+.remember-forgot a:hover{
+    text-decoration: underline;
+    color: red;
+}
+.wrapper .btn{
+    width: 100%;
+    height: 45px;
+    background-image: linear-gradient(to right, #fe8c00 0%, #f83600  51%, #fe8c00  100%);
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    background-size: 200% auto;
+    cursor: pointer;
+    color: #ffffff;
+    font-weight: 700;
+    transition: 0.5s;
+}
+
+
+  
+
+  .wrapper .btn:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+  }
+ 
+.wrapper .register-link{
+    font-size: 14.5px;
+    text-align: center;
+    margin: 20px 0 15px;
+
+}
+.register-link p a{
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+.register-link p a:hover{
+    text-decoration: underline;
+    color: blue;
+}
+
+#password-feedback {
+    border-radius: 10px;
+    text-align: center;
+    color: red; 
+    font-family:'Play', sans-serif;
+    font-size: 14px;
+    /*margin-top: 5px;*/
+    background-size: contain  ;
+    
+}
+
+#password-error {
+    border-radius: 10px;
+    text-align: center;
+    color: red; 
+    font-family:'Play', sans-serif;
+    font-size: 14px;
+    margin-top: 5px;
+    background-size: 17px auto;
+}
+
+#username-error {
+    border-radius: 10px;
+    text-align: center;
+    color: red; 
+    font-family:'Play', sans-serif;
+    font-size: 14px;
+    /*margin-top: 5px;*/
+    background-size: contain  ;
+}
+
+#email-error {
+    border-radius: 10px;
+    text-align: center;
+    color: red; 
+    font-family:'Play', sans-serif;
+    font-size: 14px;
+    /*margin-top: 5px;*/
+    background-size: contain  ;
+}
+
+.input__icon-wrapper {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+  .input__icon {
+    color: #999;
+    font-size: 24px;
+  }
+  .input__icon:hover {
+    color: #333;
+  }
