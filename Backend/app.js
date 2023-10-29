@@ -7,9 +7,10 @@ const logger = require("morgan");
 const userRoute = require("./routes/userRoute");
 const bookRoute = require("./routes/bookRoute");
 const AppError = require("./util/appError");
+const cors = require("cors");
 
 var app = express();
-
+app.use(cors());
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "jade");

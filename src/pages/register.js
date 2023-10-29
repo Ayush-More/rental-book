@@ -20,7 +20,7 @@ function Register() {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://127.0.0.1:5000/api/user/signup", {
+      const response = await fetch("http://localhost:5000/api/user/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -28,6 +28,7 @@ function Register() {
         body: JSON.stringify(formData),
       });
 
+      console.log(response);
       if (response.status === 201) {
         const data = await response.json();
         Navigate("/login");
