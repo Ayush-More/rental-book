@@ -13,16 +13,16 @@ function Navbar() {
         <nav className="navigation">
           <ul>
             <li className="nav-item">
-              <Link to="/">Home</Link>
+              <Link to="/" className="link">Home</Link>
             </li>
             <li className="nav-item">
-              <Link to="/rent">Put on Rent</Link>
+              <Link to="/rent"className="link">Put on Rent</Link>
             </li>
             <li className="nav-item">
-              <Link to="/browse">Browse</Link>
+              <Link to="/browse" className="link">Browse</Link>
             </li>
             <li className="nav-item">
-              <Link to="/contact_us">Contact Us</Link>
+              <Link to="/contact_us" className="link">Contact Us</Link>
             </li>
           </ul>
         </nav>

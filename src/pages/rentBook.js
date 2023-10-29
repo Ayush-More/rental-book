@@ -53,7 +53,7 @@ export default function RentBook() {
   };
 
   return (
-    <>
+    <><div className="body5">
       <Navbar />
       <main>
         <section className="book-upload">
@@ -141,6 +141,7 @@ export default function RentBook() {
       </main>
 
       <Footer />
+      </div>
     </>
   );
 }

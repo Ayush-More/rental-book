@@ -25,7 +25,6 @@ function Login() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(credentials),
-        mode: "no-cors",
       });
 
       if (response.status === 200) {
@@ -42,10 +41,11 @@ function Login() {
   };
 
   return (
-    <div className="wrapper">
+    <div className="body1">
+    <div className="wrapper" id="login">
       <form onSubmit={handleSubmit}>
         <h1>Login</h1>
-        <div className="input-box">
+        <div className="input-box"> 
           <input
             type="text"
             placeholder="Username"
@@ -55,9 +55,9 @@ function Login() {
             onChange={onChange}
           />
         </div>
-        <div className="input-box">
+        <div className="input-box"> 
           <input
-            className="password"
+            className="password" 
             type={showPassword ? "text" : "password"}
             id="password"
             name="password"
@@ -66,15 +66,6 @@ function Login() {
             value={credentials.password}
             onChange={onChange}
           />
-          <span className="input__icon-wrapper">
-            <i
-              className={`input__icon ${
-                showPassword ? "ri-eye-line" : "ri-eye-off-line"
-              }`}
-              onClick={togglePasswordVisibility}
-            ></i>
-          </span>
-          <div id="password-feedback"></div>
         </div>
         <div className="remember-forgot">
           <label>
@@ -91,6 +82,7 @@ function Login() {
           </p>
         </div>
       </form>
+    </div>
     </div>
   );
 }

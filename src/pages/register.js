@@ -51,8 +51,8 @@ function Register() {
   };
 
   return (
-    <div>
-      <div className="wrapper">
+    <div className="body2">
+      <div className="wrapper" id="signup">
         <form onSubmit={handleSubmit}>
           <h1>Sign Up</h1>
           <div className="input-box">

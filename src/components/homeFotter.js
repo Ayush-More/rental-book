@@ -1,11 +1,13 @@
 import React from "react";
 import "./../css/styles.css";
+import shelfshare from "./../images/shelfshare.png";
+
 function homeFotter() {
   return (
     <>
       <footer className="footer-distributed">
         <div className="footer-left">
-          <img src="./images/shelfshare.png" alt="logo" />
+        <img src={shelfshare} alt="ShelfShare Logo" />
 
           <p className="footer-links">
             <a href="home.html" className="link-1">

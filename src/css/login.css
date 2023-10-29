@@ -5,11 +5,14 @@
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-/* body{
+
+.body1{
+    /* Applied to the body element */
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    /* Background styles */
     background: url(./../images/back1.png) no-repeat;
     background-size: cover;
     background-position: center;
@@ -18,49 +21,41 @@
         rgba(0,0,0,0.4)
         rgba(0,0,0,0)
     );
-    
-} */
+}
 
-/* body{
-    background: linear-gradient(
-        to right,
-        rgba(0,0,0,0.4)
-        rgba(0,0,0,0)
-    );
-    display: flex;
-    justify-content: center;
-    min-height: 100vh;
-    background: url(./../images/back1.png) no-repeat;
-    background-size: cover;
-    background-position: center;  
-
-} */
-
-.wrapper{
+#login{
+    /* Applied to the div with class "wrapper" */
     width: 420px;
+    /* Background and box styles */
     background: transparent;
     border:2px solid rgba(255, 255, 255, .2);
     backdrop-filter: blur(50px);
-    
     box-shadow: 0 0 10px rgba(0, 0, 0, .2);
     color: #fff;
     border-radius: 10px;
     padding: 30px 40px;
-    border-color: #0096ff
+    border-color: #0096ff;
 } 
-.wrapper h1{
+
+#login.wrapper h1{
+    /* Applied to the h1 element inside "wrapper" */
     font-size: 36px;
     text-align: center;
 }
-.wrapper .input-box{
+
+#login.wrapper .input-box{
+    /* Applied to the div with class "input-box" */
     width: 100%;
     height: 60px;
     position: relative;
     margin-top: 20px;
 }
-.input-box input{
+
+#login.input-box input{
+    /* Applied to input elements inside "input-box" */
     width: 100%;
     height: 100%;
+    /* Input styles */
     background: transparent;
     border: none;
     outline: none;
@@ -70,29 +65,29 @@
     color: hsl(0, 0%, 100%);
     padding: 20px 40px 20px 20px;
 }
-.input-box input::placeholder{
+#login.input-box input::placeholder{
     color: #fff;
 
 }
-.wrapper .remember-forgot{
+#login.wrapper .remember-forgot{
     display: flex;
     justify-content: space-between;
     font-size: 14.5px;
     margin: 15px 5px 15px;
 }
-.remember-forgot label input{
+#login.remember-forgot label input{
 accent-color: #fff;
 margin-right: 3px;
 }
-.remember-forgot a {
+#login.remember-forgot a {
     color: #fff;
     text-decoration: none;
 }
-.remember-forgot a:hover{
+#login.remember-forgot a:hover{
     text-decoration: underline;
     color: red;
 }
-.wrapper .btn{
+#login.wrapper .btn{
     width: 100%;
     height: 45px;
     background-image: linear-gradient(to right, #00c6ff 0%, #0072ff  51%, #00c6ff  100%);

@@ -1,7 +1,6 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Acme&family=Croissant+One&family=Lobster&family=Lora:ital,wght@1,500&family=Open+Sans:wght@300;400&family=Play&family=Rajdhani:wght@300;700&display=swap');
 
-home body {
+.body4 {
     font-family: monospace, sans-serif;
     margin: 0;
     padding: 0;
@@ -9,7 +8,7 @@ home body {
   }
 
 
-home body, h1, h2, h3, p, ul {
+.body4, h1, h2, h3, p, ul {
   margin: 0;
   padding: 0;
 }
@@ -19,7 +18,6 @@ home body, h1, h2, h3, p, ul {
   background: #1D4350;
   background: -webkit-linear-gradient(to right, #A43931, #1D4350); 
   background: linear-gradient(to right, #A43931, #1D4350);
-  
   height: fit-content;
   display: flex;
   align-items: center;
@@ -49,16 +47,18 @@ home body, h1, h2, h3, p, ul {
  
 }
 
-.navigation a {
+.navigation .link {
+  font-family: 'Acme', sans-serif;
   text-decoration: none;
   color: #fff;
   transition: color 0.3s;
   font-size: 25px;
 }
 
-.navigation a:hover {
+.navigation .link:hover {
   color: #0056b3;
 }
+
 
 .dropdown img {
   margin-left: 10px;
@@ -232,11 +232,7 @@ home body, h1, h2, h3, p, ul {
     text-decoration:none;
     }
 
-    .btn:hover {
-      background-position: right center;
-      color: #fff;
-      text-decoration: none;
-    }
+ 
   
     #book-catalog .btn:hover {
     background-color: #e96421;
@@ -246,19 +242,31 @@ home body, h1, h2, h3, p, ul {
     background-color: #fff8f0;
     display: flex;
     width: 100%;
-  margin-top: 40px;
+    margin-top: 40px;
 
 }
 
 #book-catalog .catalog {
+  border-radius: 8px;
   margin-top: 40px;
+  margin: 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #8c3a36;
+  padding:0px 10px;
 }
 
-#book-catalog .catalog h2 {
-  font-family:'Acme', sans-serif;
+#book-catalog .catalog h1 {
+  text-decoration: underline;
+  font-family: 'Acme', sans-serif;
   font-weight: 100;
   font-size: 24px;
   margin-bottom: 15px;
+  background-color: #2f414c;
+  border-radius: 8px 8px 0px 0px;
+  color: white;
+  width: 100%;
+  padding: 10px;
+  margin-left:-10px;
 }
 
 #book-catalog .book-container {
@@ -270,7 +278,7 @@ home body, h1, h2, h3, p, ul {
   margin-inline-start: auto;
 }
 
-#book-catalog .containers .book-container .book {
+#book-catalog .book {
   font-family: 'Play', sans-serif;
   background-color: white;
   border: 1px solid #ddd;
@@ -278,8 +286,8 @@ home body, h1, h2, h3, p, ul {
   margin: 10px;
   padding: 15px;
   text-align: center;
-  max-width: 250px;
-  min-height: 400px;
+  max-width: 200px;
+  min-height: 380px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
   flex: 0 0 auto;
@@ -289,32 +297,32 @@ home body, h1, h2, h3, p, ul {
   column-width: 250px;
 }
 
-#book-catalog .containers .book-container .book:hover {
+#book-catalog .book:hover {
   transform: translateY(-5px);
 }
 
-#book-catalog .containers .book-container .book img {
-min-height: 230px;
+#book-catalog .book img {
+  min-height: 230px;
   max-width: 150px;
   height: auto;
   border-radius: 5px;
 
 }
 
-#book-catalog .containers .book-container .book h2 {
+#book-catalog .book h2 {
   font-size: 18px;
   margin: 10px 0;
 }
 
-#book-catalog .containers .book-container .book p {
+#book-catalog .book p {
   color: black;
   font-size: 14px;
   margin: 5px 0;
 }
 
-#book-catalog .containers .book-container .book button {
+#book-catalog.book button {
   font-family: 'Play', sans-serif;
-background-color: #0077B5;
+  background-color: #A43931;
 color: white;
 padding: 10px 20px;
 border: none;
@@ -506,7 +514,8 @@ width: 75%;
   margin: 10px;
   padding: 15px;
   text-align: center;
-  max-width: 200px;
+  height: 300px;
+  max-width: 250px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
   flex: 0 0 auto;
@@ -523,13 +532,11 @@ width: 75%;
 }
 
 .feature h3 {
-  color: black;
   font-size: 1.2rem;
   margin-bottom: 10px;
 }
 
 .feature p {
-  color: black;
   font-size: 1rem;
 }
 

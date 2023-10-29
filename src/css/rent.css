@@ -1,15 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Acme&family=Lobster&family=Lora:ital,wght@1,500&family=Play&family=Rajdhani:wght@300;700&display=swap');
 
 /* Reset some default styles */
-body, h1, h2, p, label, input, button {
+.body5, h1, h2, p, label, input, button {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif; /* Update font-family */
 }
 
-/* Set a background color and font for the body */
-body {
+/* Set a background color and font for the .body5 */
+.body5 {
     background: url('./../images/rent.jpeg') no-repeat; /* Use background image from React */
     background-size: cover;
     background-attachment: fixed;
