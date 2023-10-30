@@ -1,10 +1,13 @@
-import React from "react";
+import React, {  useEffect } from "react";
 import "./../css/contact.css";
 import Footer from "./../components/footer2";
 import Navbar from "../components/Navbar";
 
-export default function contact()
-{
+function Contact() {
+useEffect(() => {
+  document.title = 'Contact Us';
+}, []);
+
 return (
     <>
     <Navbar/>
@@ -29,3 +32,4 @@ return (
     </>
 )
 }
+export default Contact;

@@ -1,123 +1,258 @@
 [
-    {
-      "title": "The Great Gatsby",
-      "author": "F. Scott Fitzgerald",
-      "description": "A classic novel set in the roaring twenties.",
-      "expectingRent": 55,
-      "bookImage": "https://example.com/book1.jpg",
-      "type": "fiction"
-    },
-    {
-      "title": "To Kill a Mockingbird",
-      "author": "Harper Lee",
-      "description": "A story about racial injustice in the American South.",
-      "expectingRent": 58,
-      "bookImage": "https://example.com/book2.jpg",
-      "type": "fiction"
-    },
-    {
-      "title": "Pride and Prejudice",
-      "author": "Jane Austen",
-      "description": "A romantic novel set in 19th-century England.",
-      "expectingRent": 52,
-      "bookImage": "https://example.com/book3.jpg",
-      "type": "romance"
-    },
-    {
-      "title": "1984",
-      "author": "George Orwell",
-      "description": "A dystopian novel depicting a totalitarian society.",
-      "expectingRent": 56,
-      "bookImage": "https://example.com/book4.jpg",
-      "type": "fiction"
-    },
-    {
-      "title": "The Catcher in the Rye",
-      "author": "J.D. Salinger",
-      "description": "A coming-of-age novel featuring Holden Caulfield.",
-      "expectingRent": 53,
-      "bookImage": "https://example.com/book5.jpg",
-      "type": "fiction"
-    },
-    {
-      "title": "The Hobbit",
-      "author": "J.R.R. Tolkien",
-      "description": "A fantasy adventure of Bilbo Baggins.",
-      "expectingRent": 60,
-      "bookImage": "https://example.com/book6.jpg",
-      "type": "fantasy"
-    },
-    {
-      "title": "The Da Vinci Code",
-      "author": "Dan Brown",
-      "description": "A mystery thriller involving symbolism and art.",
-      "expectingRent": 55,
-      "bookImage": "https://example.com/book7.jpg",
-      "type": "mystery"
-    },
-    {
-      "title": "The Shining",
-      "author": "Stephen King",
-      "description": "A horror novel set in a haunted hotel.",
-      "expectingRent": 57,
-      "bookImage": "https://example.com/book8.jpg",
-      "type": "fiction"
-    },
-    {
-      "title": "The Alchemist",
-      "author": "Paulo Coelho",
-      "description": "A philosophical novel about a journey to find one's destiny.",
-      "expectingRent": 54,
-      "bookImage": "https://example.com/book9.jpg",
-      "type": "fiction"
-    },
-    {
-      "title": "Harry Potter and the Sorcerer's Stone",
-      "author": "J.K. Rowling",
-      "description": "The first book in the Harry Potter series.",
-      "expectingRent": 51,
-      "bookImage": "https://example.com/book10.jpg",
-      "type": "fantasy"
-    },
-    {
-      "title": "Jane Eyre",
-      "author": "Charlotte Brontë",
-      "description": "A classic novel of love and independence.",
-      "expectingRent": 59,
-      "bookImage": "https://example.com/book11.jpg",
-      "type": "romance"
-    },
-    {
-      "title": "The Girl with the Dragon Tattoo",
-      "author": "Stieg Larsson",
-      "description": "A thriller featuring investigative journalist Mikael Blomkvist.",
-      "expectingRent": 55,
-      "bookImage": "https://example.com/book12.jpg",
-      "type": "mystery"
-    },
-    {
-      "title": "The Chronicles of Narnia",
-      "author": "C.S. Lewis",
-      "description": "A series of fantasy novels set in the magical world of Narnia.",
-      "expectingRent": 60,
-      "bookImage": "https://example.com/book13.jpg",
-      "type": "fantasy"
-    },
-    {
-      "title": "Gone with the Wind",
-      "author": "Margaret Mitchell",
-      "description": "An epic historical romance novel set during the American Civil War.",
-      "expectingRent": 56,
-      "bookImage": "https://example.com/book14.jpg",
-      "type": "romance"
-    },
-    {
-      "title": "The Hound of the Baskervilles",
-      "author": "Arthur Conan Doyle",
-      "description": "A classic Sherlock Holmes detective novel.",
-      "expectingRent": 54,
-      "bookImage": "https://example.com/book15.jpg",
-      "type": "mystery"
-    }
-  ]
-  
+  {
+    "title": "Einstein",
+    "author": "Walter Isaacson",
+    "description": "A default description for the book.",
+    "expectingRent": 50,
+    "bookImage": "./images/book1.jpeg",
+    "type": "Non-Fiction"
+  },
+  {
+    "title": "Dust on the Mountain",
+    "author": "Ruskin Bond",
+    "description": "A default description for the book.",
+    "expectingRent": 70,
+    "bookImage": "./images/book2.jpg",
+    "type": "Fiction"
+  },
+  {
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "description": "A default description for the book.",
+    "expectingRent": 60,
+    "bookImage": "./images/book3.jpeg",
+    "type": "Fiction"
+  },
+  {
+    "title": "Wings of Fire",
+    "author": "A.P.J. Abdul Kalam",
+    "description": "A default description for the book.",
+    "expectingRent": 65,
+    "bookImage": "./images/book4.jpg",
+    "type": "Non-Fiction"
+  },
+  {
+    "title": "Doglapan",
+    "author": "Ashneer Grover",
+    "description": "A default description for the book.",
+    "expectingRent": 75,
+    "bookImage": "./images/book5.jpeg",
+    "type": "Fiction"
+  },
+  {
+    "title": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "description": "A default description for the book.",
+    "expectingRent": 55,
+    "bookImage": "./books/book6.jpeg",
+    "type": "Fiction"
+  },
+  {
+    "title": "1984",
+    "author": "George Orwell",
+    "description": "A default description for the book.",
+    "expectingRent": 68,
+    "bookImage": "./books/book7.jpeg",
+    "type": "Fiction"
+  },
+  {
+    "title": "Dune",
+    "author": "Frank Herbert",
+    "description": "A default description for the book.",
+    "expectingRent": 62,
+    "bookImage": "./books/book10.jpg",
+    "type": "Science Fiction"
+  },
+  {
+    "title": "Neuromancer",
+    "author": "William Gibson",
+    "description": "A default description for the book.",
+    "expectingRent": 78,
+    "bookImage": "./books/book11.jpg",
+    "type": "Science Fiction"
+  },
+  {
+    "title": "Ender's Game",
+    "author": "Orson Scott Card",
+    "description": "A default description for the book.",
+    "expectingRent": 70,
+    "bookImage": "./books/12.webp",
+    "type": "Science Fiction"
+  },
+  {
+    "title": "Foundation",
+    "author": "Isaac Asimov",
+    "description": "A default description for the book.",
+    "expectingRent": 53,
+    "bookImage": "./books/13.jpg",
+    "type": "Science Fiction"
+  },
+  {
+    "title": "Brave New World",
+    "author": "Aldous Huxley",
+    "description": "A default description for the book.",
+    "expectingRent": 66,
+    "bookImage": "./books/14.jpg",
+    "type": "Science Fiction"
+  },
+  {
+    "title": "The Lord of the Rings",
+    "author": "J.R.R. Tolkien",
+    "description": "A default description for the book.",
+    "expectingRent": 72,
+    "bookImage": "./books/15.jpg",
+    "type": "Fantasy"
+  },
+  {
+    "title": "Harry Potter and the Sorcerer's Stone",
+    "author": "J.K. Rowling",
+    "description": "A default description for the book.",
+    "expectingRent": 80,
+    "bookImage": "./books/16.jpeg",
+    "type": "Fantasy"
+  },
+  {
+    "title": "A Song of Ice and Fire",
+    "author": "George R.R. Martin",
+    "description": "A default description for the book.",
+    "expectingRent": 74,
+    "bookImage": "./books/17.jpg",
+    "type": "Fantasy"
+  },
+  {
+    "title": "The Hobbit",
+    "author": "J.R.R. Tolkien",
+    "description": "A default description for the book.",
+    "expectingRent": 51,
+    "bookImage": "./books/18.webp",
+    "type": "Fantasy"
+  },
+  {
+    "title": "The Name of the Wind",
+    "author": "Patrick Rothfuss",
+    "description": "A default description for the book.",
+    "expectingRent": 77,
+    "bookImage": "./books/19.jpg",
+    "type": "Fantasy"
+  },
+  {
+    "title": "The Girl with the Dragon Tattoo",
+    "author": "Stieg Larsson",
+    "description": "A default description for the book.",
+    "expectingRent": 59,
+    "bookImage": "./books/20.jpg",
+    "type": "Mystery/Thriller"
+  },
+  {
+    "title": "Gone Girl",
+    "author": "Gillian Flynn",
+    "description": "A default description for the book.",
+    "expectingRent": 71,
+    "bookImage": "./books/21.jpg",
+    "type": "Mystery/Thriller"
+  },
+  {
+    "title": "The Da Vinci Code",
+    "author": "Dan Brown",
+    "description": "A default description for the book.",
+    "expectingRent": 56,
+    "bookImage": "./books/22.jpeg",
+    "type": "Mystery/Thriller"
+  },
+  {
+    "title": "The Silent Patient",
+    "author": "Alex Michaelides",
+    "description": "A default description for the book.",
+    "expectingRent": 67,
+    "bookImage": "./books/23.jpeg",
+    "type": "Mystery/Thriller"
+  },
+  {
+    "title": "The Girl on the Train",
+    "author": "Paula Hawkins",
+    "description": "A default description for the book.",
+    "expectingRent": 76,
+    "bookImage": "./books/24.jpg",
+    "type": "Mystery/Thriller"
+  },
+  {
+    "title": "Outlander",
+    "author": "Diana Gabaldon",
+    "description": "A default description for the book.",
+    "expectingRent": 52,
+    "bookImage": "./books/25.jpeg",
+    "type": "Romance"
+  },
+  {
+    "title": "The Notebook",
+    "author": "Nicholas Sparks",
+    "description": "A default description for the book.",
+    "expectingRent": 79,
+    "bookImage": "./books/26.jpg",
+    "type": "Romance"
+  },
+  {
+    "title": "Pride and Prejudice",
+    "author": "Jane Austen",
+    "description": "A default description for the book.",
+    "expectingRent": 54,
+    "bookImage": "./books/book8.jpg",
+    "type": "Romance"
+  },
+  {
+    "title": "Me Before You",
+    "author": "Jojo Moyes",
+    "description": "A default description for the book.",
+    "expectingRent": 69,
+    "bookImage": "./books/27.webp",
+    "type": "Romance"
+  },
+  {
+    "title": "The Rosie Project",
+    "author": "Graeme Simsion",
+    "description": "A default description for the book.",
+    "expectingRent": 73,
+    "bookImage": "./books/28.jpg",
+    "type": "Romance"
+  },
+  {
+    "title": "Sapiens: A Brief History of Humankind",
+    "author": "Yuval Noah Harari",
+    "description": "A default description for the book.",
+    "expectingRent": 63,
+    "bookImage": "./books/29.jpg",
+    "type": "Non-Fiction"
+  },
+  {
+    "title": "Becoming",
+    "author": "Michelle Obama",
+    "description": "A default description for the book.",
+    "expectingRent": 64,
+    "bookImage": "./books/30.jpeg",
+    "type": "Non-Fiction"
+  },
+  {
+    "title": "Educated",
+    "author": "Tara Westover",
+    "description": "A default description for the book.",
+    "expectingRent": 57,
+    "bookImage": "./books/31.jpeg",
+    "type": "Non-Fiction"
+  },
+  {
+    "title": "The Immortal Life of Henrietta Lacks",
+    "author": "Rebecca Skloot",
+    "description": "A default description for the book.",
+    "expectingRent": 58,
+    "bookImage": "./books/32.jpg",
+    "type": "Non-Fiction"
+  },
+  {
+    "title": "Thinking, Fast and Slow",
+    "author": "Daniel Kahneman",
+    "description": "A default description for the book.",
+    "expectingRent": 68,
+    "bookImage": "./books/33.jpg",
+    "type": "Non-Fiction"
+  }
+]

@@ -1,9 +1,14 @@
-import React, { useState } from "react";
+import React, { useState , useEffect } from "react";
 import "./../css/rent.css";
 import Footer from "./../components/footer2";
 import Navbar from "../components/Navbar";
 
-export default function RentBook() {
+function RentBook() {
+  useEffect(() => {
+    document.title = 'Rent A Book';
+  }, []);
+  {
+
   const [formData, setFormData] = useState({
     title: "",
     author: "",
@@ -134,7 +139,7 @@ export default function RentBook() {
               onChange={onChange}
             />
 
-            <button type="submit">
+            <button type="submit" id="upload">
               Upload <i className="fa-solid fa-upload "></i>
             </button>
           </form>
@@ -146,3 +151,5 @@ export default function RentBook() {
     </>
   );
 }
+}
+export default RentBook;

@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Footer from "./../components/homeFotter";
 import FrontPage from "./../components/home1";
 import Container1 from "./../components/home2";
 import Navbar from "../components/Navbar";
 import './../css/styles.css';
 
-function home() {
+function Home() {
+  useEffect(() => {
+    document.title = 'ShelfShare - Book Rental';
+  }, []);
   return (
     <>
     <div className="body4">
@@ -19,4 +22,4 @@ function home() {
   );
 }
 
-export default home;
+export default Home;

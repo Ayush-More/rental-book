@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState , useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./../css/login.css";
 
@@ -39,23 +39,26 @@ function Login() {
       console.error(error);
     }
   };
+  useEffect(() => {
+    document.title = 'User Login';
+  }, []);
 
   return (
     <div className="body1">
     <div className="wrapper" id="login">
       <form onSubmit={handleSubmit}>
         <h1>Login</h1>
-        <div className="input-box"> 
+        <div className="input-box" id="loginput"> 
           <input
             type="text"
-            placeholder="Username"
+            placeholder="Email Id"
             required
             name="email"
             value={credentials.email}
             onChange={onChange}
           />
         </div>
-        <div className="input-box"> 
+        <div className="input-box" id="loginput"> 
           <input
             className="password" 
             type={showPassword ? "text" : "password"}
@@ -66,19 +69,23 @@ function Login() {
             value={credentials.password}
             onChange={onChange}
           />
-        </div>
+          <span className="input__icon-wrapper">
+              <i
+                className={`input__icon ${showPassword ? "ri-eye-line" : "ri-eye-off-line"}`}
+                onClick={togglePasswordVisibility}></i>
+            </span>
+        </div>      
         <div className="remember-forgot">
           <label>
-            <input type="checkbox" /> Remember me
+            <input className="remember" type="checkbox" /> Remember me
           </label>
-          <a href="/login">Forgot password?</a>
-        </div>
-        <button type="submit" className="btn">
+        <button type="submit" className="btn" id="loginbtn">
           Login
         </button>
+        </div>
         <div className="register-link">
           <p>
-            Don't have an account?<Link to="/register">Register</Link>
+            Don't have an account?<Link to="/register" className="reglink"> Register</Link>
           </p>
         </div>
       </form>

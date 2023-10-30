@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import "./../css/register.css";
 
+  
 function Register() {
   const [showPassword, setShowPassword] = useState(false);
   const togglePasswordVisibility = () => {
@@ -50,12 +51,17 @@ function Register() {
     });
   };
 
+  useEffect(() => {
+    document.title = 'Register Page';
+  }, []);
+
   return (
+    <>
     <div className="body2">
       <div className="wrapper" id="signup">
         <form onSubmit={handleSubmit}>
           <h1>Sign Up</h1>
-          <div className="input-box">
+          <div className="input-box" id="inputbox">
             <input
               type="text"
               id="username"
@@ -67,7 +73,7 @@ function Register() {
             />
             <div id="username-error"></div>
           </div>
-          <div className="input-box">
+          <div className="input-box" id="inputbox">
             <input
               type="email"
               id="email"
@@ -79,10 +85,10 @@ function Register() {
             />
             <div id="email-error"></div>
           </div>
-          <div className="input-box">
+          <div className="input-box" id="inputbox">
             <input
               className="password"
-              type="password"
+              type={showPassword ? "text" : "password"}
               id="password"
               name="password"
               placeholder="Create Password"
@@ -91,14 +97,15 @@ function Register() {
               onChange={handleChange}
             />
             <span className="input__icon-wrapper">
-              <i className="input__icon ri-eye-off-line"></i>
+              <i  className={`input__icon ${showPassword ? "ri-eye-line" : "ri-eye-off-line"}`}
+      onClick={togglePasswordVisibility}></i>
             </span>
             <div id="password-feedback"></div>
           </div>
-          <div className="input-box">
+          <div className="input-box" id="inputbox">
             <input
               className="password"
-              type="password"
+              type={showPassword ? "text" : "password"}
               id="confirm-password"
               name="confirmPassword"
               placeholder="Confirm Password"
@@ -108,32 +115,27 @@ function Register() {
             />
             <span className="input__icon-wrapper">
               <i
-                id="confirm-password-icon"
-                className="input__icon ri-eye-off-line"
-                onClick={() =>
-                  togglePasswordVisibility(
-                    "confirm-password",
-                    "confirm-password-icon"
-                  )
-                }
-              ></i>
+                 className={`input__icon ${showPassword ? "ri-eye-line" : "ri-eye-off-line"}`}
+                 onClick={togglePasswordVisibility}></i>
             </span>
             <div id="password-error"></div>
           </div>
 
-          <div className="remember-forgot"></div>
+          <div className="remember-forgot">
           <button type="submit" id="submit-button" className="btn">
             Register
           </button>
+          </div>
 
           <div className="register-link">
             <p>
-              Already have an account?<Link to="/login"> Login</Link>
+              Already have an account? <Link to="/login" className="reglink">Login</Link>
             </p>
           </div>
         </form>
       </div>
     </div>
+    </>
   );
 }
 

@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./../css/browse.css";
 import Footer from "./../components/footer2";
 import Navbar from "../components/Navbar";
-export default function browse() {
+function Browse() {
+  useEffect(() => {
+    document.title = 'Browse Books';
+  }, []);
   return (
     <>
       <body className="home">
@@ -39,3 +42,4 @@ export default function browse() {
     </>
   );
 }
+export default Browse;
