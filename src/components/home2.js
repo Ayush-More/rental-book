@@ -4,7 +4,7 @@ import "./../css/styles.css";
 function home2() {
   return (
     <>
-        <main className="container" id="book-catalog">
+        
           <section className="catalog">
             <h1>Newly Added</h1>
             <div className="book-container">
@@ -75,9 +75,8 @@ function home2() {
               </div>
             </div>
           </section>
-        </main>
+        
 
-        <main className="container" id="book-catalog">
           <section className="catalog">
             <h1>Frequently Rented Books</h1>
             <div className="book-container">
@@ -139,7 +138,6 @@ function home2() {
               </div>
             </div>
           </section>
-        </main>
       
       </>
     );

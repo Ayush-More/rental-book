@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Acme&family=Lobster&family=Lora:ital,wght@1,500&family=Play&family=Rajdhani:wght@300;700&display=swap');
 
-body, h1, h2, p, label, input, textarea, button {
+.body6, h1, h2, p, label, input, textarea, button {
   margin: 0;
   padding: 0;
   border: none;
 }
 
-body {
-  background-image: url('book-s4.jpg');
+.body6 {
+  background-image: url(./../images/book-s4.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   font-family: Arial, sans-serif;
@@ -22,13 +22,17 @@ body {
 }
 
 /* Style the contact section */
-.contact {
+#con .contact {
   background-color: rgba(255, 255, 255, 0.79); 
   border-radius: 10px;
-  padding:40px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   text-align: center;
   margin-top: 20px;
+  padding: 40px;
+  margin-bottom: 20px;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 150px;
 }
 
 h2 {

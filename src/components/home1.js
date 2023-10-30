@@ -18,7 +18,7 @@ function Browse() {
           <div className="credits1">
             <i className="coin">
               <img src={coin} alt="coin" />
-              CREDITS
+              <p>CREDITS</p>
             </i>
           </div>
         </nav>
@@ -33,7 +33,7 @@ function Browse() {
               <div className="feature">
                 <img src={colstack} alt="Feature 1 Icon" />
                 <h3>Wide Book Selection</h3>
-                <p>
+                <p className="p1">
                   Choose from a vast collection of books across different
                   genres.
                 </p>
@@ -42,13 +42,13 @@ function Browse() {
               <div className="feature">
                 <img src={options} alt="Feature 2 Icon" />
                 <h3>Flexible Rental Options</h3>
-                <p>Rent books on a weekly basis with affordable pricing.</p>
+                <p className="p1">Rent books on a weekly basis with affordable pricing.</p>
               </div>
 
               <div className="feature">
                 <img src={share} alt="Feature 3 Icon" />
                 <h3>Easy Sharing</h3>
-                <p>
+                <p className="p1">
                   Share your own books with other book enthusiasts effortlessly.
                 </p>
               </div>
@@ -56,7 +56,7 @@ function Browse() {
               <div className="feature">
                 <img src={profile} alt="Feature 4 Icon" />
                 <h3>User Profiles</h3>
-                <p>
+                <p className="p1">
                   Create and manage your profile, keep track of your rentals,
                   and more.
                 </p>

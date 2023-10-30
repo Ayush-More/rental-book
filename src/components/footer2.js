@@ -1,5 +1,6 @@
 import React from "react";
-import "./../css/styles.css";
+import "./../css/rent.css";
+import shelfshare from "./../images/shelfshare.png";
 
 function footer2() {
   return (
@@ -9,11 +10,7 @@ function footer2() {
           <div className="container">
             <p>&copy; 2023 ShelfShare. All rights reserved.</p>
 
-            <img
-              className="fit-picture1"
-              src="./images/shelfshare.png"
-              alt="ShelfShare"
-            />
+            <img className="fitpicture" src={shelfshare} alt="ShelfShare Logo" />
           </div>
         </footer>
       </div>

@@ -55,6 +55,7 @@ export default function RentBook() {
   return (
     <><div className="body5">
       <Navbar />
+
       <main>
         <section className="book-upload">
           <h2>Upload Your Book</h2>

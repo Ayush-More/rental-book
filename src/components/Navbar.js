@@ -22,13 +22,13 @@ function Navbar() {
               <Link to="/browse" className="link">Browse</Link>
             </li>
             <li className="nav-item">
-              <Link to="/contact_us" className="link">Contact Us</Link>
+              <Link to="/contact" className="link">Contact Us</Link>
             </li>
           </ul>
         </nav>
         <div className="user-profile">
           <Link to="/login" className="btn btn-primary">
-            Login
+            Login/Signup
           </Link>
         </div>
       </header>

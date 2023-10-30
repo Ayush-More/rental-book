@@ -7,17 +7,23 @@ export default function browse() {
     <>
       <body className="home">
         <Navbar />
-        <div className="genre-filter">
-          <label for="genre-select">Filter by Genre:</label>
-          <select id="genre-select">
+        <div class="searchtab">
+    <div class="search-bar">
+        <input type="text" id="search-input" placeholder="Search books by title"></input>
+    </div>
+    <div class="genre-filter">
+        <label for="genre-select">Filter by Genre:</label>
+        <select id="genre-select">
             <option value="all">All Genres</option>
             <option value="Fiction">Fiction</option>
             <option value="Non-Fiction">Non-Fiction</option>
             <option value="Mystery/Thriller">Mystery</option>
             <option value="Fantasy">Fantasy</option>
             <option value="Romance">Romance</option>
-          </select>
-        </div>
+        </select>
+        
+    </div>
+</div>
 
         <div className="book-list">
           <div className="book" data-genre="Non-Fiction">

@@ -139,13 +139,19 @@
     border-radius:10px;
     width: 120px;
     height: auto;
+    transition-duration: 0.3s;
+  }
+
+  .credits1p{
+    font-family:'Play', sans-serif;
   }
 
   .credits1:hover{
     transform: translate(-10px);
-    transition-duration: 0.1s;
+    transition-duration: 0.3s;
     box-shadow: 0 0 20px #eee;
   }
+  
   .coin img{
     width: 50px;
     height: auto;
@@ -205,7 +211,7 @@
     
   }
   
-  .hero-text {
+  .hero .hero-text {
     font-family: 'Croissant One', cursive;
     font-weight:300;
     font-size: 25px;
@@ -218,8 +224,9 @@
              
     .btn {
       background-image: linear-gradient(to right, #C04848 0%, #1f4451  51%, #C04848  100%);
+      max-height: 80px;
       margin: 10px;
-      padding: 15px 45px;
+      padding: 10px 20px;
       text-align: center;
       transition: 0.5s;
       background-size: 200% auto;
@@ -228,17 +235,23 @@
       border-radius: 10px;
       display: inline-block;
       font-size: 20px;
-    font-family: 'Acme', sans-serif;
-    text-decoration:none;
+      font-family: 'Acme', sans-serif;
+      text-decoration:none;
     }
+    .btn:hover {
+      background-position: right center;
+      color: #fff;
+      text-decoration: none;
+    }
+  
 
  
   
-    #book-catalog .btn:hover {
+    .btn:hover {
     background-color: #e96421;
   }
 
-  #book-catalog .containers {
+  .containers {
     background-color: #fff8f0;
     display: flex;
     width: 100%;
@@ -246,7 +259,7 @@
 
 }
 
-#book-catalog .catalog {
+.catalog {
   border-radius: 8px;
   margin-top: 40px;
   margin: 20px;
@@ -255,7 +268,7 @@
   padding:0px 10px;
 }
 
-#book-catalog .catalog h1 {
+.catalog h1 {
   text-decoration: underline;
   font-family: 'Acme', sans-serif;
   font-weight: 100;
@@ -264,12 +277,12 @@
   background-color: #2f414c;
   border-radius: 8px 8px 0px 0px;
   color: white;
-  width: 100%;
+  width: 101.37%;
   padding: 10px;
   margin-left:-10px;
 }
 
-#book-catalog .book-container {
+.book-container {
   display: flex;
   overflow-x: scroll;
   padding: 10px 0;
@@ -278,7 +291,7 @@
   margin-inline-start: auto;
 }
 
-#book-catalog .book {
+.book {
   font-family: 'Play', sans-serif;
   background-color: white;
   border: 1px solid #ddd;
@@ -297,11 +310,11 @@
   column-width: 250px;
 }
 
-#book-catalog .book:hover {
+.book:hover {
   transform: translateY(-5px);
 }
 
-#book-catalog .book img {
+.book img {
   min-height: 230px;
   max-width: 150px;
   height: auto;
@@ -309,12 +322,12 @@
 
 }
 
-#book-catalog .book h2 {
+.book h2 {
   font-size: 18px;
   margin: 10px 0;
 }
 
-#book-catalog .book p {
+.book p {
   color: black;
   font-size: 14px;
   margin: 5px 0;
@@ -514,8 +527,8 @@ width: 75%;
   margin: 10px;
   padding: 15px;
   text-align: center;
-  height: 300px;
-  max-width: 250px;
+  height: 250px;
+  max-width: 230px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
   flex: 0 0 auto;
@@ -536,8 +549,9 @@ width: 75%;
   margin-bottom: 10px;
 }
 
-.feature p {
+.feature .p1{
   font-size: 1rem;
+  color: black;
 }
 
 /* Hover effect (optional) */
@@ -546,4 +560,7 @@ width: 75%;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-
+.fitpicture{
+  width: 250px;
+    height: auto;
+}
