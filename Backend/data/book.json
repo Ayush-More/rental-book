@@ -4,7 +4,7 @@
     "author": "Walter Isaacson",
     "description": "A default description for the book.",
     "expectingRent": 50,
-    "bookImage": "./images/book1.jpeg",
+    "bookImage": "./../src/images/books/book1.jpeg",
     "type": "Non-Fiction"
   },
   {
@@ -12,7 +12,7 @@
     "author": "Ruskin Bond",
     "description": "A default description for the book.",
     "expectingRent": 70,
-    "bookImage": "./images/book2.jpg",
+    "bookImage": "./../src/images/books/book2.jpg",
     "type": "Fiction"
   },
   {
@@ -20,7 +20,7 @@
     "author": "F. Scott Fitzgerald",
     "description": "A default description for the book.",
     "expectingRent": 60,
-    "bookImage": "./images/book3.jpeg",
+    "bookImage": "./../src/images/books/book3.jpeg",
     "type": "Fiction"
   },
   {
@@ -28,7 +28,7 @@
     "author": "A.P.J. Abdul Kalam",
     "description": "A default description for the book.",
     "expectingRent": 65,
-    "bookImage": "./images/book4.jpg",
+    "bookImage": "./../src/images/books/book4.jpg",
     "type": "Non-Fiction"
   },
   {
@@ -36,7 +36,7 @@
     "author": "Ashneer Grover",
     "description": "A default description for the book.",
     "expectingRent": 75,
-    "bookImage": "./images/book5.jpeg",
+    "bookImage": "./../src/images/books/book5.jpeg",
     "type": "Fiction"
   },
   {
