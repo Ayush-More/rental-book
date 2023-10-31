@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import './../css/browse.css';
+import './../css/bookdetails.css';
 import Footer from "./../components/footer2";
 import Navbar from "../components/Navbar"; // Import your CSS file
 
