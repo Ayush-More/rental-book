@@ -58,7 +58,19 @@ const importData = async () => {
     console.error("Error inserting data:", err);
   }
 };
-// console.log(process.argv);
+const deleteData = async () => {
+  try {
+    await bookModel.deleteMany({});
+    console.log("Data deleted successfully");
+  } catch (err) {
+    console.error("Error deleting data:", err);
+  }
+};
+
 if (process.argv[2] === "--import") {
+  // Code to import data
   importData();
+} else if (process.argv[2] === "--delete") {
+  // Code to delete data
+  deleteData();
 }

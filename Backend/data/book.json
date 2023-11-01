@@ -4,255 +4,255 @@
     "author": "Walter Isaacson",
     "description": "A default description for the book.",
     "expectingRent": 50,
-    "bookImage": "./../src/images/books/book1.jpeg",
-    "type": "Non-Fiction"
+    "bookImage": "/images/book/book1.jpeg",
+    "type": "non-fiction"
   },
   {
     "title": "Dust on the Mountain",
     "author": "Ruskin Bond",
     "description": "A default description for the book.",
     "expectingRent": 70,
-    "bookImage": "./../src/images/books/book2.jpg",
-    "type": "Fiction"
+    "bookImage": "/images/book/book2.jpg",
+    "type": "fiction"
   },
   {
     "title": "The Great Gatsby",
     "author": "F. Scott Fitzgerald",
     "description": "A default description for the book.",
     "expectingRent": 60,
-    "bookImage": "./../src/images/books/book3.jpeg",
-    "type": "Fiction"
+    "bookImage": "/images/book/book3.jpeg",
+    "type": "fiction"
   },
   {
     "title": "Wings of Fire",
     "author": "A.P.J. Abdul Kalam",
     "description": "A default description for the book.",
     "expectingRent": 65,
-    "bookImage": "./../src/images/books/book4.jpg",
-    "type": "Non-Fiction"
+    "bookImage": "/images/book/book4.jpg",
+    "type": "non-fiction"
   },
   {
     "title": "Doglapan",
     "author": "Ashneer Grover",
     "description": "A default description for the book.",
     "expectingRent": 75,
-    "bookImage": "./../src/images/books/book5.jpeg",
-    "type": "Fiction"
+    "bookImage": "/images/book/book5.jpeg",
+    "type": "fiction"
   },
   {
     "title": "To Kill a Mockingbird",
     "author": "Harper Lee",
     "description": "A default description for the book.",
     "expectingRent": 55,
-    "bookImage": "./books/book6.jpeg",
-    "type": "Fiction"
+    "bookImage": "/images/books/book6.jpeg",
+    "type": "fiction"
   },
   {
     "title": "1984",
     "author": "George Orwell",
     "description": "A default description for the book.",
     "expectingRent": 68,
-    "bookImage": "./books/book7.jpeg",
-    "type": "Fiction"
+    "bookImage": "/images/books/book7.jpeg",
+    "type": "fiction"
   },
   {
     "title": "Dune",
     "author": "Frank Herbert",
     "description": "A default description for the book.",
     "expectingRent": 62,
-    "bookImage": "./books/book10.jpg",
-    "type": "Science Fiction"
+    "bookImage": "/images/books/book10.jpg",
+    "type": "fiction"
   },
   {
     "title": "Neuromancer",
     "author": "William Gibson",
     "description": "A default description for the book.",
     "expectingRent": 78,
-    "bookImage": "./books/book11.jpg",
-    "type": "Science Fiction"
+    "bookImage": "/images/books/book11.jpg",
+    "type": "fiction"
   },
   {
     "title": "Ender's Game",
     "author": "Orson Scott Card",
     "description": "A default description for the book.",
     "expectingRent": 70,
-    "bookImage": "./books/12.webp",
-    "type": "Science Fiction"
+    "bookImage": "/images/books/12.webp",
+    "type": "fiction"
   },
   {
     "title": "Foundation",
     "author": "Isaac Asimov",
     "description": "A default description for the book.",
     "expectingRent": 53,
-    "bookImage": "./books/13.jpg",
-    "type": "Science Fiction"
+    "bookImage": "/images/books/13.jpg",
+    "type": "fiction"
   },
   {
     "title": "Brave New World",
     "author": "Aldous Huxley",
     "description": "A default description for the book.",
     "expectingRent": 66,
-    "bookImage": "./books/14.jpg",
-    "type": "Science Fiction"
+    "bookImage": "/images/books/14.jpg",
+    "type": "fiction"
   },
   {
     "title": "The Lord of the Rings",
     "author": "J.R.R. Tolkien",
     "description": "A default description for the book.",
     "expectingRent": 72,
-    "bookImage": "./books/15.jpg",
-    "type": "Fantasy"
+    "bookImage": "/images/books/15.jpg",
+    "type": "fantasy"
   },
   {
     "title": "Harry Potter and the Sorcerer's Stone",
     "author": "J.K. Rowling",
     "description": "A default description for the book.",
     "expectingRent": 80,
-    "bookImage": "./books/16.jpeg",
-    "type": "Fantasy"
+    "bookImage": "/images/books/16.jpeg",
+    "type": "fantasy"
   },
   {
     "title": "A Song of Ice and Fire",
     "author": "George R.R. Martin",
     "description": "A default description for the book.",
     "expectingRent": 74,
-    "bookImage": "./books/17.jpg",
-    "type": "Fantasy"
+    "bookImage": "/images/books/17.jpg",
+    "type": "fantasy"
   },
   {
     "title": "The Hobbit",
     "author": "J.R.R. Tolkien",
     "description": "A default description for the book.",
     "expectingRent": 51,
-    "bookImage": "./books/18.webp",
-    "type": "Fantasy"
+    "bookImage": "/images/books/18.webp",
+    "type": "fantasy"
   },
   {
     "title": "The Name of the Wind",
     "author": "Patrick Rothfuss",
     "description": "A default description for the book.",
     "expectingRent": 77,
-    "bookImage": "./books/19.jpg",
-    "type": "Fantasy"
+    "bookImage": "/images/books/19.jpg",
+    "type": "fantasy"
   },
   {
     "title": "The Girl with the Dragon Tattoo",
     "author": "Stieg Larsson",
     "description": "A default description for the book.",
     "expectingRent": 59,
-    "bookImage": "./books/20.jpg",
-    "type": "Mystery/Thriller"
+    "bookImage": "/images/books/20.jpg",
+    "type": "mystery"
   },
   {
     "title": "Gone Girl",
     "author": "Gillian Flynn",
     "description": "A default description for the book.",
     "expectingRent": 71,
-    "bookImage": "./books/21.jpg",
-    "type": "Mystery/Thriller"
+    "bookImage": "/images/books/21.jpg",
+    "type": "mystery"
   },
   {
     "title": "The Da Vinci Code",
     "author": "Dan Brown",
     "description": "A default description for the book.",
     "expectingRent": 56,
-    "bookImage": "./books/22.jpeg",
-    "type": "Mystery/Thriller"
+    "bookImage": "/images/books/22.jpeg",
+    "type": "mystery"
   },
   {
     "title": "The Silent Patient",
     "author": "Alex Michaelides",
     "description": "A default description for the book.",
     "expectingRent": 67,
-    "bookImage": "./books/23.jpeg",
-    "type": "Mystery/Thriller"
+    "bookImage": "/images/books/23.jpeg",
+    "type": "mystery"
   },
   {
     "title": "The Girl on the Train",
     "author": "Paula Hawkins",
     "description": "A default description for the book.",
     "expectingRent": 76,
-    "bookImage": "./books/24.jpg",
-    "type": "Mystery/Thriller"
+    "bookImage": "/images/books/24.jpg",
+    "type": "mystery"
   },
   {
     "title": "Outlander",
     "author": "Diana Gabaldon",
     "description": "A default description for the book.",
     "expectingRent": 52,
-    "bookImage": "./books/25.jpeg",
-    "type": "Romance"
+    "bookImage": "/images/books/25.jpeg",
+    "type": "romance"
   },
   {
     "title": "The Notebook",
     "author": "Nicholas Sparks",
     "description": "A default description for the book.",
     "expectingRent": 79,
-    "bookImage": "./books/26.jpg",
-    "type": "Romance"
+    "bookImage": "/images/books/26.jpg",
+    "type": "romance"
   },
   {
     "title": "Pride and Prejudice",
     "author": "Jane Austen",
     "description": "A default description for the book.",
     "expectingRent": 54,
-    "bookImage": "./books/book8.jpg",
-    "type": "Romance"
+    "bookImage": "/images/books/book8.jpg",
+    "type": "romance"
   },
   {
     "title": "Me Before You",
     "author": "Jojo Moyes",
     "description": "A default description for the book.",
     "expectingRent": 69,
-    "bookImage": "./books/27.webp",
-    "type": "Romance"
+    "bookImage": "/images/books/27.webp",
+    "type": "romance"
   },
   {
     "title": "The Rosie Project",
     "author": "Graeme Simsion",
     "description": "A default description for the book.",
     "expectingRent": 73,
-    "bookImage": "./books/28.jpg",
-    "type": "Romance"
+    "bookImage": "/images/books/28.jpg",
+    "type": "romance"
   },
   {
     "title": "Sapiens: A Brief History of Humankind",
     "author": "Yuval Noah Harari",
     "description": "A default description for the book.",
     "expectingRent": 63,
-    "bookImage": "./books/29.jpg",
-    "type": "Non-Fiction"
+    "bookImage": "/images/books/29.jpg",
+    "type": "non-fiction"
   },
   {
     "title": "Becoming",
     "author": "Michelle Obama",
     "description": "A default description for the book.",
     "expectingRent": 64,
-    "bookImage": "./books/30.jpeg",
-    "type": "Non-Fiction"
+    "bookImage": "/images/books/30.jpeg",
+    "type": "non-fiction"
   },
   {
     "title": "Educated",
     "author": "Tara Westover",
     "description": "A default description for the book.",
     "expectingRent": 57,
-    "bookImage": "./books/31.jpeg",
-    "type": "Non-Fiction"
+    "bookImage": "/images/books/31.jpeg",
+    "type": "non-fiction"
   },
   {
     "title": "The Immortal Life of Henrietta Lacks",
     "author": "Rebecca Skloot",
     "description": "A default description for the book.",
     "expectingRent": 58,
-    "bookImage": "./books/32.jpg",
-    "type": "Non-Fiction"
+    "bookImage": "/images/books/32.jpg",
+    "type": "non-fiction"
   },
   {
     "title": "Thinking, Fast and Slow",
     "author": "Daniel Kahneman",
     "description": "A default description for the book.",
     "expectingRent": 68,
-    "bookImage": "./books/33.jpg",
-    "type": "Non-Fiction"
+    "bookImage": "/images/books/33.jpg",
+    "type": "non-fiction"
   }
 ]

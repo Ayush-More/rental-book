@@ -42,7 +42,9 @@ function Browse() {
               <div className="feature">
                 <img src={options} alt="Feature 2 Icon" />
                 <h3>Flexible Rental Options</h3>
-                <p className="p1">Rent books on a weekly basis with affordable pricing.</p>
+                <p className="p1">
+                  Rent books on a weekly basis with affordable pricing.
+                </p>
               </div>
 
               <div className="feature">

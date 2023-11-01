@@ -17,7 +17,7 @@ const bookSchema = new mongoose.Schema({
     type: Number,
     required: [true, "Expecting rent is required"],
     min: [50, "Minimum expecting rent is 50"],
-    max: [60, "Maximum expecting rent is 60"],
+    max: [100, "Maximum expecting rent is 60"],
   },
   bookImage: {
     type: String,

@@ -1,13 +1,14 @@
-/* eslint-disable no-unused-expressions */
-/* eslint-disable no-sequences */
 const catchAsync = require("./../util/catchAsync");
 const book = require("./../Model/bookModel");
 const multer = require("multer");
+const path = require("path");
 
 exports.getBooksByType = catchAsync(async (req, res, next) => {
-  const books = await book.find({
-    type: { $eq: req.params.type },
-  });
+  let query = {};
+  if (req.params.type !== "all") {
+    query.type = req.params.type;
+  }
+  const books = await book.find(query);
   res.status(200).json({
     status: "success",
     data: {
@@ -17,33 +18,55 @@ exports.getBooksByType = catchAsync(async (req, res, next) => {
 });
 
 const storage = multer.diskStorage({
-  destination: "./../../src/images",
+  destination: function (req, file, cb) {
+    cb(null, "public/images/books"); // Specify the relative path to your project directory
+  },
   filename: function (req, file, cb) {
     const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
-    cb(null, file.fieldname + "-" + uniqueSuffix);
+    const extname = path.extname(file.originalname);
+    const fileName = file.fieldname + "-" + uniqueSuffix + extname;
+    cb(null, fileName);
   },
 });
 
 const upload = multer({ storage: storage });
 
-(exports.rentBook = upload.single("bookImage")),
-  catchAsync(async (req, res) => {
-    const newBookData = {
-      title: req.body.title,
-      author: req.body.author,
-      description: req.body.description,
-      expectingRent: req.body.expectingRent,
-      bookImage: req.file.filename,
-      type: req.body.genre,
-    };
+exports.rentBook = upload.single("bookImage");
 
-    const newBook = await book.create(newBookData);
-    console.log("success");
+exports.createBook = catchAsync(async (req, res) => {
+  const newBookData = {
+    title: req.body.title,
+    author: req.body.author,
+    description: req.body.description,
+    expectingRent: req.body.expectingRent,
+    bookImage: req.file.fieldname,
+    type: req.body.type,
+  };
 
-    res.status(201).json({
-      status: "success",
-      data: {
-        data: newBook,
-      },
-    });
+  const newBook = await book.create(newBookData);
+
+  res.status(201).json({
+    status: "success",
+    data: {
+      data: newBook,
+    },
   });
+});
+
+exports.getBookById = catchAsync(async (req, res, next) => {
+  const Book = await book.findById(req.params.id);
+
+  if (!book) {
+    return res.status(404).json({
+      status: "error",
+      message: "Book not found",
+    });
+  }
+
+  res.status(200).json({
+    status: "success",
+    data: {
+      Book,
+    },
+  });
+});

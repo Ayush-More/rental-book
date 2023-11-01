@@ -1,54 +1,81 @@
-import React, { useEffect } from "react";
-import './../css/bookdetails.css';
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import "./../css/bookdetails.css";
 import Footer from "./../components/footer2";
-import Navbar from "../components/Navbar"; // Import your CSS file
+import Navbar from "../components/Navbar";
 
-function BookDetails() {
-    useEffect(() => {
-        document.title = 'Browse Books';
-      }, []);
+function BookDetails({ match }) {
+  const { id } = useParams(); // Use the useParams hook to get the book ID
+  const [bookDetails, setBookDetails] = useState(null);
+
+  useEffect(() => {
+    fetchBookDetails(id); // Use the ID from useParams
+  }, [id]);
+
+  const fetchBookDetails = async (bookId) => {
+    try {
+      const response = await fetch(
+        `http://localhost:5000/api/book/details/${bookId}`,
+        {
+          method: "GET",
+        }
+      );
+
+      if (response.ok) {
+        const data = await response.json();
+        setBookDetails(data); // Update the state with book details
+      } else {
+        console.error("Failed to fetch book details");
+      }
+    } catch (error) {
+      console.error("Error fetching book details:", error);
+    }
+  };
+
   return (
     <>
-      <Navbar/>
+      <Navbar />
       <div className="book-details">
         <i className="fa-regular fa-circle-chevron-left" />
-        <div className="bookimage">
-          <img src="./images/book1.jpeg" alt="Book 1" draggable="false" />
-        </div>
-        <div className="bookdetails">
-          <div className="book-info">
-            <h2>Einstein</h2>
-            <p>Author: Walter Issacson</p>
-            <p>Publication Year: 2023</p>
+        {bookDetails ? (
+          <div className="bookimage">
+            <img
+              src={bookDetails.image}
+              alt={bookDetails.title}
+              draggable="false"
+            />
           </div>
-          <div className="rent-terms">
-            <h3>Rental Terms</h3>
-            <ul>
-              <li>Return within 30 days</li>
-              <li>No damage allowed</li>
-              <li>Late fees may apply</li>
-            </ul>
-          </div>
-          <br />
-          <div className="description">
-            <h4>Description</h4>
+        ) : (
+          <div>Loading...</div>
+        )}
+        {bookDetails ? (
+          <div className="bookdetails">
+            <div className="book-info">
+              <h2>{bookDetails.title}</h2>
+              <p>Author: {bookDetails.author}</p>
+              <p>Publication Year: {bookDetails.publicationYear}</p>
+            </div>
+            <div className="rent-terms">
+              <h3>Rental Terms</h3>
+              <ul>
+                <li>Return within 30 days</li>
+                <li>No damage allowed</li>
+                <li>Late fees may apply</li>
+              </ul>
+            </div>
             <br />
-            <p>
-              The book delves into Einstein's personal life, scientific
-              discoveries, and the impact of his work on the world of physics.
-              Walter Isaacson's writing style is accessible and engaging,
-              making complex scientific concepts more understandable for a
-              general audience. If you're interested in learning about the life
-              of Albert Einstein and his contributions to science, "Einstein:
-              His Life and Universe" by Walter Isaacson is a great choice.
-            </p>
+            <div className="description">
+              <h4>Description</h4>
+              <br />
+              <p>{bookDetails.description}</p>
+            </div>
+            <div className="crtbtn">
+              <button>
+                <p>Add to Cart</p>
+              </button>
+            </div>
           </div>
-          <div className="crtbtn">
-            <button>
-              <p>Add to Cart</p>
-            </button>
-          </div>
-        </div>
+        ) : null}
       </div>
       <Footer />
     </>
