@@ -22,7 +22,7 @@ function Browse() {
   const fetchData = async () => {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/book/detail/${selectedGenre}`,
+        `http://localhost:5000/api/book/${selectedGenre}`,
         {
           method: "GET",
         }
