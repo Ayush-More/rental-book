@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import "./../css/rent.css";
 import Footer from "./../components/footer2";
 import Navbar from "../components/Navbar";
+import { getToken } from "./../utility/getToken";
+import ProtectedRoute from "./../components/ProtectedRoute";
 
 function RentBook() {
   useEffect(() => {
@@ -43,8 +45,10 @@ function RentBook() {
     formDataToSend.append("type", formData.type);
 
     try {
+      const token = getToken();
       const response = await fetch("http://127.0.0.1:5000/api/book/addbooks", {
         method: "POST",
+        Authorization: `Bearer ${token}`,
         body: formDataToSend,
       });
 
@@ -62,95 +66,97 @@ function RentBook() {
 
   return (
     <>
-      <div className="body5">
-        <Navbar />
-        <main>
-          <section className="book-upload">
-            <h2>Upload Your Book</h2>
-            <form onSubmit={handleSubmit}>
-              <label htmlFor="title">Title:</label>
-              <input
-                type="text"
-                id="title"
-                name="title"
-                required
-                value={formData.title}
-                onChange={onChange}
-              />
-
-              <label htmlFor="author">Author:</label>
-              <input
-                type="text"
-                id="author"
-                name="author"
-                required
-                value={formData.author}
-                onChange={onChange}
-              />
-
-              <label htmlFor="description">Description:</label>
-              <textarea
-                id="description"
-                name="description"
-                required
-                value={formData.description}
-                onChange={onChange}
-              ></textarea>
-
-              <label htmlFor="expectingRent">
-                Expecting Rental Price (per week):
-              </label>
-              <input
-                type="number"
-                id="expectingRent"
-                name="expectingRent"
-                required
-                value={formData.expectingRent}
-                onChange={onChange}
-              />
-              <div id="note">
-                <p>
-                  &#9755; Usual rental price lies between Rs.50-80 <br />{" "}
-                  &#9755; Your suggestion will be considered on the book's
-                  condition{" "}
-                </p>
-              </div>
-
-              <div className="genre-filter">
-                <label htmlFor="genre-select">Select the genre:</label>
-                <select
-                  id="genre-select"
-                  name="genre"
-                  value={formData.genre}
+      <ProtectedRoute>
+        <div className="body5">
+          <Navbar />
+          <main>
+            <section className="book-upload">
+              <h2>Upload Your Book</h2>
+              <form onSubmit={handleSubmit}>
+                <label htmlFor="title">Title:</label>
+                <input
+                  type="text"
+                  id="title"
+                  name="title"
+                  required
+                  value={formData.title}
                   onChange={onChange}
-                >
-                  <option value="fiction">Fiction</option>
-                  <option value="non-fiction">Non-Fiction</option>
-                  <option value="mystery">Mystery</option>
-                  <option value="fantasy">Fantasy</option>
-                  <option value="romance">Romance</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
+                />
 
-              <label htmlFor="book-image">Book Image:</label>
-              <input
-                type="file"
-                id="book-image"
-                name="bookImage"
-                accept=".jpg, .jpeg, .png"
-                required
-                onChange={onChange}
-              />
+                <label htmlFor="author">Author:</label>
+                <input
+                  type="text"
+                  id="author"
+                  name="author"
+                  required
+                  value={formData.author}
+                  onChange={onChange}
+                />
 
-              <button type="submit" id="upload">
-                Upload <i className="fa-solid fa-upload "></i>
-              </button>
-            </form>
-          </section>
-        </main>
-        <Footer />
-      </div>
+                <label htmlFor="description">Description:</label>
+                <textarea
+                  id="description"
+                  name="description"
+                  required
+                  value={formData.description}
+                  onChange={onChange}
+                ></textarea>
+
+                <label htmlFor="expectingRent">
+                  Expecting Rental Price (per week):
+                </label>
+                <input
+                  type="number"
+                  id="expectingRent"
+                  name="expectingRent"
+                  required
+                  value={formData.expectingRent}
+                  onChange={onChange}
+                />
+                <div id="note">
+                  <p>
+                    &#9755; Usual rental price lies between Rs.50-80 <br />{" "}
+                    &#9755; Your suggestion will be considered on the book's
+                    condition{" "}
+                  </p>
+                </div>
+
+                <div className="genre-filter">
+                  <label htmlFor="genre-select">Select the genre:</label>
+                  <select
+                    id="genre-select"
+                    name="genre"
+                    value={formData.genre}
+                    onChange={onChange}
+                  >
+                    <option value="fiction">Fiction</option>
+                    <option value="non-fiction">Non-Fiction</option>
+                    <option value="mystery">Mystery</option>
+                    <option value="fantasy">Fantasy</option>
+                    <option value="romance">Romance</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+
+                <label htmlFor="book-image">Book Image:</label>
+                <input
+                  type="file"
+                  id="book-image"
+                  name="bookImage"
+                  accept=".jpg, .jpeg, .png"
+                  required
+                  onChange={onChange}
+                />
+
+                <button type="submit" id="upload">
+                  Upload <i className="fa-solid fa-upload "></i>
+                </button>
+              </form>
+            </section>
+          </main>
+          <Footer />
+        </div>
+      </ProtectedRoute>
     </>
   );
 }

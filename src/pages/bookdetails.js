@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import "./../css/bookdetails.css";
 import Footer from "./../components/footer2";
 import Navbar from "../components/Navbar";
+import { getToken } from "./../utility/getToken";
+import ProtectedRoute from "../components/ProtectedRoute";
 
 function BookDetails({ match }) {
   const { id } = useParams(); // Use the useParams hook to get the book ID
@@ -14,10 +16,12 @@ function BookDetails({ match }) {
 
   const fetchBookDetails = async (bookId) => {
     try {
+      const token = getToken();
       const response = await fetch(
         `http://localhost:5000/api/book/details/${bookId}`,
         {
           method: "GET",
+          Authorization: `Bearer ${token}`,
         }
       );
 
@@ -34,50 +38,52 @@ function BookDetails({ match }) {
 
   return (
     <>
-      <Navbar />
-      <div className="book-details">
-        <i className="fa-regular fa-circle-chevron-left" />
-        {bookDetails ? (
-          <div className="bookimage">
-            <img
-              src={bookDetails.image}
-              alt={bookDetails.title}
-              draggable="false"
-            />
-          </div>
-        ) : (
-          <div>Loading...</div>
-        )}
-        {bookDetails ? (
-          <div className="bookdetails">
-            <div className="book-info">
-              <h2>{bookDetails.title}</h2>
-              <p>Author: {bookDetails.author}</p>
-              <p>Publication Year: {bookDetails.publicationYear}</p>
+      <ProtectedRoute>
+        <Navbar />
+        <div className="book-details">
+          <i className="fa-regular fa-circle-chevron-left" />
+          {bookDetails ? (
+            <div className="bookimage">
+              <img
+                src={bookDetails.image}
+                alt={bookDetails.title}
+                draggable="false"
+              />
             </div>
-            <div className="rent-terms">
-              <h3>Rental Terms</h3>
-              <ul>
-                <li>Return within 30 days</li>
-                <li>No damage allowed</li>
-                <li>Late fees may apply</li>
-              </ul>
-            </div>
-            <br />
-            <div className="description">
-              <h4>Description</h4>
+          ) : (
+            <div>Loading...</div>
+          )}
+          {bookDetails ? (
+            <div className="bookdetails">
+              <div className="book-info">
+                <h2>{bookDetails.title}</h2>
+                <p>Author: {bookDetails.author}</p>
+                <p>Publication Year: {bookDetails.publicationYear}</p>
+              </div>
+              <div className="rent-terms">
+                <h3>Rental Terms</h3>
+                <ul>
+                  <li>Return within 30 days</li>
+                  <li>No damage allowed</li>
+                  <li>Late fees may apply</li>
+                </ul>
+              </div>
               <br />
-              <p>{bookDetails.description}</p>
+              <div className="description">
+                <h4>Description</h4>
+                <br />
+                <p>{bookDetails.description}</p>
+              </div>
+              <div className="crtbtn">
+                <button>
+                  <p>Add to Cart</p>
+                </button>
+              </div>
             </div>
-            <div className="crtbtn">
-              <button>
-                <p>Add to Cart</p>
-              </button>
-            </div>
-          </div>
-        ) : null}
-      </div>
-      <Footer />
+          ) : null}
+        </div>
+        <Footer />
+      </ProtectedRoute>
     </>
   );
 }

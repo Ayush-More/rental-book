@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import "./../css/register.css";
 
-  
 function Register() {
   const [showPassword, setShowPassword] = useState(false);
   const togglePasswordVisibility = () => {
@@ -32,8 +31,9 @@ function Register() {
       console.log(response);
       if (response.status === 201) {
         const data = await response.json();
-        Navigate("/login");
+        localStorage.setItem("token", data.token);
         console.log(data);
+        Navigate("/login");
       } else {
         const errorData = await response.json();
 
@@ -52,89 +52,99 @@ function Register() {
   };
 
   useEffect(() => {
-    document.title = 'Register Page';
+    document.title = "Register Page";
   }, []);
 
   return (
     <>
-    <div className="body2">
-      <div className="wrapper" id="signup">
-        <form onSubmit={handleSubmit}>
-          <h1>Sign Up</h1>
-          <div className="input-box" id="inputbox">
-            <input
-              type="text"
-              id="username"
-              name="username"
-              placeholder="Username"
-              required
-              value={formData.username}
-              onChange={handleChange}
-            />
-            <div id="username-error"></div>
-          </div>
-          <div className="input-box" id="inputbox">
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Email Id"
-              required
-              value={formData.email}
-              onChange={handleChange}
-            />
-            <div id="email-error"></div>
-          </div>
-          <div className="input-box" id="inputbox">
-            <input
-              className="password"
-              type={showPassword ? "text" : "password"}
-              id="password"
-              name="password"
-              placeholder="Create Password"
-              required
-              value={formData.password}
-              onChange={handleChange}
-            />
-            <span className="input__icon-wrapper">
-              <i  className={`input__icon ${showPassword ? "ri-eye-line" : "ri-eye-off-line"}`}
-      onClick={togglePasswordVisibility}></i>
-            </span>
-            <div id="password-feedback"></div>
-          </div>
-          <div className="input-box" id="inputbox">
-            <input
-              className="password"
-              type={showPassword ? "text" : "password"}
-              id="confirm-password"
-              name="confirmPassword"
-              placeholder="Confirm Password"
-              required
-              value={formData.confirmPassword}
-              onChange={handleChange}
-            />
-            <span className="input__icon-wrapper">
-              <i
-                 className={`input__icon ${showPassword ? "ri-eye-line" : "ri-eye-off-line"}`}
-                 onClick={togglePasswordVisibility}></i>
-            </span>
-            <div id="password-error"></div>
-          </div>
+      <div className="body2">
+        <div className="wrapper" id="signup">
+          <form onSubmit={handleSubmit}>
+            <h1>Sign Up</h1>
+            <div className="input-box" id="inputbox">
+              <input
+                type="text"
+                id="username"
+                name="username"
+                placeholder="Username"
+                required
+                value={formData.username}
+                onChange={handleChange}
+              />
+              <div id="username-error"></div>
+            </div>
+            <div className="input-box" id="inputbox">
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Email Id"
+                required
+                value={formData.email}
+                onChange={handleChange}
+              />
+              <div id="email-error"></div>
+            </div>
+            <div className="input-box" id="inputbox">
+              <input
+                className="password"
+                type={showPassword ? "text" : "password"}
+                id="password"
+                name="password"
+                placeholder="Create Password"
+                required
+                value={formData.password}
+                onChange={handleChange}
+              />
+              <span className="input__icon-wrapper">
+                <i
+                  className={`input__icon ${
+                    showPassword ? "ri-eye-line" : "ri-eye-off-line"
+                  }`}
+                  onClick={togglePasswordVisibility}
+                ></i>
+              </span>
+              <div id="password-feedback"></div>
+            </div>
+            <div className="input-box" id="inputbox">
+              <input
+                className="password"
+                type={showPassword ? "text" : "password"}
+                id="confirm-password"
+                name="confirmPassword"
+                placeholder="Confirm Password"
+                required
+                value={formData.confirmPassword}
+                onChange={handleChange}
+              />
+              <span className="input__icon-wrapper">
+                <i
+                  className={`input__icon ${
+                    showPassword ? "ri-eye-line" : "ri-eye-off-line"
+                  }`}
+                  onClick={togglePasswordVisibility}
+                ></i>
+              </span>
+              <div id="password-error"></div>
+            </div>
 
-          <div className="remember-forgot">
-          <button type="submit" id="submit-button" className="btn">
-            Register
-          </button>
-          </div>
+            <div className="remember-forgot">
+              <button type="submit" id="submit-button" className="btn">
+                Register
+              </button>
+            </div>
 
-          <div className="register-link">
-            <p>
-              Already have an account? <Link to="/login" className="reglink">Login</Link>
-            </p>
-          </div>
-        </form>
+            <div className="register-link">
+              <p>
+                Already have an account?{" "}
+                <Link to="/login" className="reglink">
+                  Login
+                </Link>
+              </p>
+            </div>
+          </form>
+        </div>
       </div>
-    </div>
     </>
   );
 }
