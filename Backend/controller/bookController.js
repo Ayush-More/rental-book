@@ -19,7 +19,7 @@ exports.getBooksByType = catchAsync(async (req, res, next) => {
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, "public/images/books"); // Specify the relative path to your project directory
+    cb(null, "/images/books");
   },
   filename: function (req, file, cb) {
     const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
@@ -39,7 +39,7 @@ exports.createBook = catchAsync(async (req, res) => {
     author: req.body.author,
     description: req.body.description,
     expectingRent: req.body.expectingRent,
-    bookImage: req.file.fieldname,
+    bookImage: req.file.filename,
     type: req.body.type,
   };
 

@@ -17,17 +17,21 @@ function BookDetails({ match }) {
   const fetchBookDetails = async (bookId) => {
     try {
       const token = getToken();
+      console.log(bookId);
       const response = await fetch(
-        `http://localhost:5000/api/book/details/${bookId}`,
+        `http://localhost:5000/api/book/detail/${bookId}`,
         {
           method: "GET",
-          Authorization: `Bearer ${token}`,
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
         }
       );
 
       if (response.ok) {
         const data = await response.json();
-        setBookDetails(data); // Update the state with book details
+        setBookDetails(data.data.Book);
+        console.log(data.data.Book); // Update the state with book details
       } else {
         console.error("Failed to fetch book details");
       }
@@ -45,7 +49,7 @@ function BookDetails({ match }) {
           {bookDetails ? (
             <div className="bookimage">
               <img
-                src={bookDetails.image}
+                src={bookDetails.bookImage}
                 alt={bookDetails.title}
                 draggable="false"
               />
