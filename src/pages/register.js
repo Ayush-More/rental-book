@@ -57,6 +57,7 @@ function Register() {
 
   return (
     <>
+<<<<<<< Updated upstream
       <div className="body2">
         <div className="wrapper" id="signup">
           <form onSubmit={handleSubmit}>
@@ -127,6 +128,71 @@ function Register() {
               </span>
               <div id="password-error"></div>
             </div>
+=======
+    <div className="body2">
+      <div className="wrapper" id="signup">
+        <form onSubmit={handleSubmit}>
+          <h1>Sign Up</h1>
+          <div className="input-box" id="inputbox">
+            <input
+              type="text"
+              id="username"
+              name="username"
+              placeholder="Username"
+              required
+              value={formData.username}
+              onChange={handleChange}
+            />
+            <div id="username-error"></div>
+          </div>
+          <div className="input-box" id="inputbox">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Email Id"
+              required
+              value={formData.email}
+              onChange={handleChange}
+            />
+            <div id="email-error"></div>
+          </div>
+          <div className="input-box" id="inputbox">
+            <input
+              className="password"
+              type={showPassword ? "password" : "text"}
+              id="password"
+              name="password"
+              placeholder="Create Password"
+              required
+              value={formData.password}
+              onChange={handleChange}
+            />
+            <span className="input__icon-wrapper">
+              <i  className={`input__icon ${showPassword ? "ri-eye-line" : "ri-eye-off-line"}`}
+      onClick={togglePasswordVisibility}></i>
+            </span>
+            <div id="password-feedback"></div>
+          </div>
+          <div className="input-box" id="inputbox">
+            <input
+              className="password"
+              type={showPassword ? "password" : "text"}
+              id="confirm-password"
+              name="confirmPassword"
+              placeholder="Confirm Password"
+              required
+              value={formData.confirmPassword}
+              onChange={handleChange}
+            />
+            <span className="input__icon-wrapper">
+              <i
+                 className={`input__icon ${showPassword ? "ri-eye-line" : "ri-eye-off-line"}`}
+                 onClick={togglePasswordVisibility}></i>
+            </span>
+            <div id="password-error"></div>
+          </div>
+>>>>>>> Stashed changes
 
             <div className="remember-forgot">
               <button type="submit" id="submit-button" className="btn">
