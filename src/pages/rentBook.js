@@ -69,6 +69,7 @@ function RentBook() {
   return (
     <>
       <ProtectedRoute>
+        <body className="body10">
         <Navbar />
         <main>
           <section className="book-upload">
@@ -156,6 +157,7 @@ function RentBook() {
           </section>
         </main>
         <Footer />
+        </body>
       </ProtectedRoute>
     </>
   );

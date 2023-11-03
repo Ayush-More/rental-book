@@ -13,17 +13,8 @@
   padding: 0;
 }
 
-
-.taskbar {
-  background: #1D4350;
-  background: -webkit-linear-gradient(to right, #A43931, #1D4350); 
-  background: linear-gradient(to right, #A43931, #1D4350);
-  height: fit-content;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 20px;
-  color: hsl(0, 4%, 5%);
+.nav-list{
+  cursor: pointer;
 }
 
 .logo img {

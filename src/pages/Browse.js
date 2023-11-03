@@ -15,6 +15,7 @@ function Browse() {
     fetchData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedGenre]);
+  console.log(booksData);
 
   const handleGenreChange = (event) => {
     setSelectedGenre(event.target.value);
@@ -27,15 +28,13 @@ function Browse() {
         `http://localhost:5000/api/book/${selectedGenre}`,
         {
           method: "GET",
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
+          Authorization: `Bearer ${token}`,
         }
       );
+
       if (response.ok) {
         const data = await response.json();
-        console.log(data.data.books);
-        setBooksData(data.data.books);
+        setBooksData(data.books);
       } else {
         console.error("Failed to fetch data");
       }
@@ -43,12 +42,11 @@ function Browse() {
       console.error("Error fetching data:", error);
     }
   };
-  console.log(booksData);
 
   return (
     <>
       <ProtectedRoute>
-        <body className="home">
+        <body className="body9">
           <Navbar />
           <div className="searchtab">
             <div className="search-bar">
@@ -84,7 +82,7 @@ function Browse() {
                   data-genre={book.genre}
                 >
                   <div className="book">
-                    <img src={book.bookImage} alt={book.title} />
+                    <img src={book.image} alt={book.title} />
                     <h2>{book.title}</h2>
                     <p>Author: {book.author}</p>
                     <p>Genre: {book.genre}</p>

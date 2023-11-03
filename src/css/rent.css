@@ -9,8 +9,8 @@ body, h1, h2, p, label, input, button {
 }
 
 /* Set a background color and font for the .body5 */
-body {
-    background: url(./../images/rent.jpeg) no-repeat; /* Use background image from React */
+.body10 {
+    background: url(./../images/rent.jpeg) no-repeat; 
     background-size: cover;
     background-attachment: fixed;
     font-family: Arial, sans-serif;

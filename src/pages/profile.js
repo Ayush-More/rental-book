@@ -1,114 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState , useEffect} from 'react';
 import './../css/profile.css';
+import Navbar1 from "../components/Navbar1";
+import shelfshare from "./../images/shelfshare.png";
+import userImage from "./../images/user.png";
+
 
 function Profile() {
-  const [isSidebarOpen, setSidebarOpen] = useState(false);
-
-  const toggleSidebar = () => {
-    setSidebarOpen(!isSidebarOpen);
-    menuBtnChange();
-  };
-
-  function menuBtnChange() {
-    const toggleSidebar = () => {
-        setSidebarOpen(!isSidebarOpen);
-      };
-  }
-
-  function showContent(id) {
-    const sections = document.querySelectorAll('.home-section');
-    sections.forEach(section => {
-      section.style.display = 'none';
-    });
-
-    const content = document.getElementById(id);
-    content.style.display = 'block';
-  }
-
-  const [isAnimating, setAnimating] = useState(false);
-
-const handleOrderClick = () => {
-  if (!isAnimating) {
-    setAnimating(true);
-
-    setTimeout(() => {
-      setAnimating(false);
-    }, 10000);
-  }
-};
+  
   return (
-    <>
-      <div className={`sidebar ${isSidebarOpen ? 'open' : ''}`}>
-        <div className="logo-details">
-          <div className="logo_name">
-            <a href="home.html">
-              <img src="./images/shelfshare.png" alt="logo" />
-            </a>
-          </div>
-          <i className={`bx ${isSidebarOpen ? 'bx-menu-alt-right' : 'bx-menu'}`} onClick={toggleSidebar}></i>
-        </div>
-        <ul className="nav-list">
-          <li>
-            <form id="search-form" action="browse.html" method="get">
-              <i className="bx bx-search"></i>
-              <input type="text" name="search" placeholder="Search..." />
-              <span className="tooltip">Search</span>
-            </form>
-          </li>
-          <li>
-            <a onClick={() => showContent('section1')}>
-              <i className="bx bx-grid-alt"></i>
-              <span className="links_name">Dashboard</span>
-            </a>
-            <span className="tooltip">Dashboard</span>
-          </li>
-          <li>
-            <a onClick={() => showContent('section2')}>
-              <i className="bx bx-user"></i>
-              <span className="links_name">User</span>
-            </a>
-            <span className="tooltip">User</span>
-          </li>
-          <li>
-            <a onClick={() => showContent('section3')}>
-              <i className="bx bx-cart-alt"></i>
-              <span className="links_name">Rental Desk</span>
-            </a>
-            <span className="tooltip">Rental Desk</span>
-          </li>
-          <li>
-            <a onClick={() => showContent('section4')}>
-              <i className="bx bx-history"></i>
-              <span className="links_name">Shelf History</span>
-            </a>
-            <span className="tooltip">Shelf History</span>
-          </li>
-          <li>
-            <a onClick={() => showContent('section5')}>
-              <i className="bx bx-chat"></i>
-              <span className="links_name">Community</span>
-            </a>
-            <span className="tooltip">Community</span>
-          </li>
-          <li>
-            <a onClick={() => showContent('section6')}>
-              <i className="bx bx-cog"></i>
-              <span className="links_name">Setting</span>
-            </a>
-            <span className="tooltip">Setting</span>
-          </li>
-          <li className="profile">
-            <div className="profile-details">
-              <img src="./images/user.png" alt="profileImg" />
-              <div className="name_mail">
-                <div className="name">AP Shah</div>
-                <div className="mail">apshah@gmail.com</div>
-              </div>
-            </div>
-            <i className="bx bx-log-out" id="log_out"></i>
-          </li>
-        </ul>
-      </div>
+    <div className='body8'>
+      <Navbar1/>
 
       <section className="home-section" id="section1">
         <div className="text">Dashboard</div>
@@ -141,7 +42,7 @@ const handleOrderClick = () => {
         <div className="text">User</div>
         <div className="profile-container1">
           <div className="profile-description">
-            <img className="profile-image" src="./images/user.png" alt="Your Name" />
+          <img className='profile-image' src={userImage} alt="User" />
             <div className="profile-name">AP Shah</div>
             <p>Email: apshah@gmail.com</p>
             <p>Contact Number: +91 9874563210</p>
@@ -170,7 +71,8 @@ const handleOrderClick = () => {
       <section className="home-section" id="section6">
         <div className="text">Dashboard</div>
       </section>
-      </>
+      
+      </div>
   );
 }
 
