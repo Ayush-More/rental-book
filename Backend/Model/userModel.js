@@ -30,6 +30,14 @@ const userSchema = new mongoose.Schema({
   //     message: "Passwords are not the same!",
   //   },
   // },
+  BookRented: {
+    type: Number,
+    default: 0,
+  },
+  BookPutOnRent: {
+    type: Number,
+    default: 0,
+  },
   passwordChangedAt: Date,
   passwordResetToken: String,
   passwordResetExpires: Date,

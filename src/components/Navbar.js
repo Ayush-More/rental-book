@@ -55,16 +55,16 @@ function Navbar() {
         <div className="user-profile">
           {isLoggedIn ? (
             <div class="dropdown">
-              <a href="profile.html">
+              <Link to="/profile">
                 {profileImage ? (
                   <img src={profileImage} alt="User" />
                 ) : (
                   <img src={userImage} alt="User" />
                 )}
                 v
-              </a>
+              </Link>
               <div class="dropdown-content">
-                <a href="profile.html">Dashboard</a>
+                <a href="/profile">Dashboard</a>
                 <br />
                 <a>-------------</a>
                 <br />

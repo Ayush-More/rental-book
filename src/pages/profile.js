@@ -1,21 +1,19 @@
-import React, { useState , useEffect} from 'react';
-import './../css/profile.css';
+import React, { useState, useEffect } from "react";
+import "./../css/profile.css";
 import Navbar1 from "../components/Navbar1";
 import shelfshare from "./../images/shelfshare.png";
 import userImage from "./../images/user.png";
 
-
 function Profile() {
-  
   return (
-    <div className='body8'>
-      <Navbar1/>
+    <div className="body8">
+      <Navbar1 />
 
       <section className="home-section" id="section1">
         <div className="text">Dashboard</div>
         <div className="profile-container1">
           <div className="profile">
-            <img className="profile-image" src="./images/user.png" alt="Your Name" />
+            <img className="profile-image" src={userImage} alt="Your Name" />
           </div>
           <div className="profile-description">
             <div className="profile-name">AP Shah</div>
@@ -42,14 +40,16 @@ function Profile() {
         <div className="text">User</div>
         <div className="profile-container1">
           <div className="profile-description">
-          <img className='profile-image' src={userImage} alt="User" />
+            <img className="profile-image" src={userImage} alt="User" />
             <div className="profile-name">AP Shah</div>
             <p>Email: apshah@gmail.com</p>
             <p>Contact Number: +91 9874563210</p>
             <h3>Address</h3>
             <p>
-              A.P. Shah Institute Of Technology<br />
-              Survey No. 12, 13 Opp. Hypercity Mall, Kasarvadavali, Ghodbunder Road, Thane West, Maharashtra 400615
+              A.P. Shah Institute Of Technology
+              <br />
+              Survey No. 12, 13 Opp. Hypercity Mall, Kasarvadavali, Ghodbunder
+              Road, Thane West, Maharashtra 400615
             </p>
             <h3>Book Category Preferences</h3>
             <p>Mystery, Science Fiction, Fantasy</p>
@@ -71,8 +71,7 @@ function Profile() {
       <section className="home-section" id="section6">
         <div className="text">Dashboard</div>
       </section>
-      
-      </div>
+    </div>
   );
 }
 

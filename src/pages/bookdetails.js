@@ -80,7 +80,7 @@ function BookDetails({ match }) {
               </div>
               <div className="crtbtn">
                 <button>
-                  <p>Add to Cart</p>
+                  <p>Rent a Book</p>
                 </button>
               </div>
             </div>
