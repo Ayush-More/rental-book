@@ -84,11 +84,11 @@ function Browse() {
                   data-genre={book.genre}
                 >
                   <div className="book">
-                    <img src={book.bookImage} alt={book.title} />
+                    <img src={`/images/${book.bookImage}`} alt={book.title} />
                     <h2>{book.title}</h2>
                     <p>Author: {book.author}</p>
                     <p>Genre: {book.genre}</p>
-                    <button>Add to Cart</button>
+                    <button>View More</button>
                   </div>
                 </Link>
               ))

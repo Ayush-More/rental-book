@@ -1,10 +1,43 @@
 import React, { useState, useEffect } from "react";
 import "./../css/profile.css";
 import Navbar1 from "../components/Navbar1";
-import shelfshare from "./../images/shelfshare.png";
+import { getToken } from "./../utility/getToken";
 import userImage from "./../images/user.png";
+import { useBookContext } from "./../context/bookContext";
 
 function Profile() {
+  const [userData, setuserdata] = useState([]);
+  useEffect(() => {
+    document.title = "Profile";
+    userDetails();
+  }, []);
+  console.log(userData);
+  const { rentedBooksCount, booksRented } = useBookContext();
+  console.log(rentedBooksCount);
+  console.log(booksRented);
+  const userDetails = async () => {
+    try {
+      const token = getToken();
+
+      const Response = await fetch("http://localhost:5000/api/user/profile", {
+        method: "GET",
+        headers: {
+          Content: "aplication/json",
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      if (Response.status === 200) {
+        const data = await Response.json();
+        setuserdata(data.userData.candidate_details);
+      } else {
+        console.log("Does not recived the user data");
+        const errorData = await Response.json();
+        console.error(errorData);
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
   return (
     <div className="body8">
       <Navbar1 />
@@ -16,18 +49,16 @@ function Profile() {
             <img className="profile-image" src={userImage} alt="Your Name" />
           </div>
           <div className="profile-description">
-            <div className="profile-name">AP Shah</div>
-            <h3>Book Category Preferences</h3>
-            <p>Mystery, Science Fiction, Fantasy</p>
+            <div className="profile-name">{userData.name}</div>
           </div>
           <div className="cards">
             <div className="card">
               <h3>Books Rented</h3>
-              <p>25</p>
+              <p>{rentedBooksCount}</p>
             </div>
             <div className="card">
               <h3>Books Put on Rent</h3>
-              <p>15</p>
+              <p>{booksRented}</p>
             </div>
             <div className="card">
               <h3>Credits Earned</h3>

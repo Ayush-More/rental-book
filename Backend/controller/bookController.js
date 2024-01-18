@@ -19,7 +19,7 @@ exports.getBooksByType = catchAsync(async (req, res, next) => {
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, "/images/books");
+    cb(null, "F:/Workspace/Abhishek project/src/public/images");
   },
   filename: function (req, file, cb) {
     const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
@@ -45,7 +45,7 @@ exports.createBook = catchAsync(async (req, res) => {
 
   const newBook = await book.create(newBookData);
 
-  res.status(201).json({
+  res.status(200).json({
     status: "success",
     data: {
       data: newBook,

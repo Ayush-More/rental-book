@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const crypto = require("crypto");
 const validator = require("validator");
 const bcrypt = require("bcryptjs");
 
@@ -13,23 +14,29 @@ const userSchema = new mongoose.Schema({
     lowercase: true,
     validate: [validator.isEmail, "Please provide a valid email"],
   },
+  pic: {
+    type: "String",
+    required: true,
+    default:
+      "https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg",
+  },
   password: {
     type: String,
     required: [true, "Please provide a password"],
     minlength: 8,
     select: false,
   },
-  // passwordConfirm: {
-  //   type: String,
-  //   required: [true, "Please confirm your password"],
-  //   validate: {
-  //     // This only works on CREATE and SAVE!!!
-  //     validator: function (el) {
-  //       return el === this.password;
-  //     },
-  //     message: "Passwords are not the same!",
-  //   },
-  // },
+  passwordConfirm: {
+    type: String,
+    required: [true, "Please confirm your password"],
+    validate: {
+      // This only works on CREATE and SAVE!!!
+      validator: function (el) {
+        return el === this.password;
+      },
+      message: "Passwords are not the same!",
+    },
+  },
   BookRented: {
     type: Number,
     default: 0,
@@ -79,6 +86,20 @@ userSchema.methods.changedPasswordAfter = function (JWTTimestamp) {
 
   // False means NOT changed
   return false;
+};
+userSchema.methods.createPasswordResetToken = function () {
+  const resetToken = crypto.randomBytes(32).toString("hex");
+
+  this.passwordResetToken = crypto
+    .createHash("sha256")
+    .update(resetToken)
+    .digest("hex");
+
+  console.log({ resetToken }, this.passwordResetToken);
+
+  this.passwordResetExpires = Date.now() + 10 * 60 * 1000;
+
+  return resetToken;
 };
 const User = mongoose.model("User", userSchema);
 module.exports = User;

@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import emailjs from "emailjs-com";
 import "./../css/contact.css";
 import Footer from "./../components/footer2";
 import Navbar from "../components/Navbar";
@@ -7,6 +8,27 @@ function Contact() {
   useEffect(() => {
     document.title = "Contact Us";
   }, []);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const form = e.target;
+    emailjs
+      .sendForm("service_id", "template_id", new FormData(form), "user_id")
+      .then(
+        (result) => {
+          console.log(result.text);
+          alert("Your request is send");
+        },
+        (error) => {
+          console.log(error.text);
+          // Add any error handling here
+        }
+      );
+
+    // Clear the form after submission if needed
+    form.reset();
+  };
 
   return (
     <>
@@ -19,7 +41,7 @@ function Contact() {
               If you have any questions or feedback, feel free to get in touch
               with us.
             </p>
-            <form id="contact-form">
+            <form id="contact-form" onSubmit={handleSubmit}>
               <label htmlFor="name">Name:</label>
               <input type="text" id="name" name="name" required />
               <label htmlFor="email">Email:</label>
@@ -40,4 +62,5 @@ function Contact() {
     </>
   );
 }
+
 export default Contact;

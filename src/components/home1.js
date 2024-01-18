@@ -1,7 +1,6 @@
 import React from "react";
 import "./../css/styles.css";
 import shelfshare from "./../images/shelfshare.png";
-import coin from "./../images/coin.png";
 import options from "./../images/options.svg";
 import colstack from "./../images/colstack.png";
 import share from "./../images/share.svg";
@@ -14,12 +13,6 @@ function Browse() {
         <nav className="navbar">
           <div className="container">
             <img className="fit-picture" src={shelfshare} alt="ShelfShare" />
-          </div>
-          <div className="credits1">
-            <i className="coin">
-              <img src={coin} alt="coin" />
-              <p>CREDITS</p>
-            </i>
           </div>
         </nav>
         <div className="container">

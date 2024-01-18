@@ -1,9 +1,17 @@
+// import React from "react";
+
+// function ResetPassword() {
+//   return <div>ResetPassword</div>;
+// }
+
+// export default ResetPassword;
+
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import "./../css/register.css";
 
-function Register() {
+function Reset() {
   const [showPassword, setShowPassword] = useState(false);
 
   const togglePasswordVisibility = () => {
@@ -77,7 +85,7 @@ function Register() {
           </div>
           <div className="input-box" id="inputbox">
             <input
-              type="email"
+              type="text"
               id="email"
               name="email"
               placeholder="Email Id"
@@ -119,35 +127,15 @@ function Register() {
               value={formData.passwordConfirm}
               onChange={handleChange}
             />
-            <span className="input__icon-wrapper">
-              <i
-                className={`input__icon ${
-                  showPassword ? "ri-eye-line" : "ri-eye-off-line"
-                }`}
-                onClick={togglePasswordVisibility}
-              ></i>
-            </span>
-            <div id="password-error"></div>
           </div>
 
-          <div className="remember-forgot">
-            <button type="submit" id="submit-button" className="btn">
-              Register
-            </button>
-          </div>
-
-          <div className="register-link">
-            <p>
-              Already have an account?{" "}
-              <Link to="/login" className="reglink">
-                Login
-              </Link>
-            </p>
-          </div>
+          <button type="submit" id="submit-button" className="btn">
+            Register
+          </button>
         </form>
       </div>
     </div>
   );
 }
 
-export default Register;
+export default Reset;

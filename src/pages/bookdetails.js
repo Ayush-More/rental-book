@@ -5,10 +5,12 @@ import Footer from "./../components/footer2";
 import Navbar from "../components/Navbar";
 import { getToken } from "./../utility/getToken";
 import ProtectedRoute from "../components/ProtectedRoute";
+import { useBookContext } from "../context/bookContext";
 
 function BookDetails({ match }) {
   const { id } = useParams(); // Use the useParams hook to get the book ID
   const [bookDetails, setBookDetails] = useState(null);
+  const { incrementRentedBooksCount } = useBookContext();
 
   useEffect(() => {
     fetchBookDetails(id); // Use the ID from useParams
@@ -31,13 +33,18 @@ function BookDetails({ match }) {
       if (response.ok) {
         const data = await response.json();
         setBookDetails(data.data.Book);
-        console.log(data.data.Book); // Update the state with book details
+        console.log(data.data.Book);
+        incrementRentedBooksCount(); // Update the state with book details
       } else {
         console.error("Failed to fetch book details");
       }
     } catch (error) {
       console.error("Error fetching book details:", error);
     }
+  };
+
+  const handleRentedBook = () => {
+    alert("Thank you for renting the book");
   };
 
   return (
@@ -49,7 +56,7 @@ function BookDetails({ match }) {
           {bookDetails ? (
             <div className="bookimage">
               <img
-                src={bookDetails.bookImage}
+                src={`/images/${bookDetails.bookImage}`}
                 alt={bookDetails.title}
                 draggable="false"
               />
@@ -79,7 +86,7 @@ function BookDetails({ match }) {
                 <p>{bookDetails.description}</p>
               </div>
               <div className="crtbtn">
-                <button>
+                <button onClick={handleRentedBook}>
                   <p>Rent a Book</p>
                 </button>
               </div>

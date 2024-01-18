@@ -1,80 +1,51 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { getToken } from "./../utility/getToken";
 import "./../css/styles.css";
 
-function home2() {
+function Home2() {
+  const [booksData, setBooksData] = useState([]);
+
+  useEffect(() => {
+    document.title = "Home";
+    fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  const fetchData = async () => {
+    try {
+      const token = getToken();
+      const response = await fetch(`http://localhost:5000/api/book/all`, {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        setBooksData(data.data.books);
+      } else {
+        console.error("Failed to fetch data");
+      }
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
+  const last10Books = booksData.slice(-10);
+
   return (
     <>
       <section className="catalog">
         <h1>Newly Added</h1>
         <div className="book-container">
-          {/* Book entries for Newly Added */}
-          <div className="book" data-genre="Science Fiction">
-            <img src="/images/books/book11.jpg" alt="Neuromancer" />
-            <h2>Neuromancer</h2>
-            <p>Author: William Gibson</p>
-            <p>Genre: Science Fiction</p>
-            <button>Add to Cart</button>
-          </div>
-
-          <div className="book" data-genre="Science Fiction">
-            <img src="/images/books/12.webp" alt="Ender's Game" />
-            <h2>Ender's Game</h2>
-            <p>Author: Orson Scott Card</p>
-            <p>Genre: Science Fiction</p>
-            <button>Add to Cart</button>
-          </div>
-
-          <div className="book" data-genre="Science Fiction">
-            <img src="/images/books/13.jpg" alt="Foundation" />
-            <h2>Foundation</h2>
-            <p>Author: Isaac Asimov</p>
-            <p>Genre: Science Fiction</p>
-            <button>Add to Cart</button>
-          </div>
-
-          <div className="book" data-genre="Science Fiction">
-            <img src="/images/books/14.jpg" alt="Brave New World" />
-            <h2>Brave New World</h2>
-            <p>Author: Aldous Huxley</p>
-            <p>Genre: Science Fiction</p>
-            <button>Add to Cart</button>
-          </div>
-
-          {/* Fantasy */}
-          <div className="book" data-genre="Fantasy">
-            <img src="/images/books/15.jpg" alt="The Lord of the Rings" />
-            <h2>The Lord of the Rings</h2>
-            <p>Author: J.R.R. Tolkien</p>
-            <p>Genre: Fantasy</p>
-            <button>Add to Cart</button>
-          </div>
-
-          <div className="book" data-genre="Fantasy">
-            <img
-              src="/images/books/16.jpeg"
-              alt="Harry Potter and the Sorcerer's Stone"
-            />
-            <h2>Harry Potter and the Sorcerer's Stone</h2>
-            <p>Author: J.K. Rowling</p>
-            <p>Genre: Fantasy</p>
-            <button>Add to Cart</button>
-          </div>
-
-          <div className="book" data-genre="Fantasy">
-            <img src="/images/books/17.jpg" alt="A Song of Ice and Fire" />
-            <h2>A Song of Ice and Fire</h2>
-            <p>Author: George R.R. Martin</p>
-            <p>Genre: Fantasy</p>
-            <button>Add to Cart</button>
-          </div>
-
-          <div className="book" data-genre="Fantasy">
-            <img src="/images/books/18.webp" alt="The Hobbit" />
-            <h2>The Hobbit</h2>
-            <p>Author: J.R.R. Tolkien</p>
-            <p>Genre: Fantasy</p>
-            <button>Add to Cart</button>
-          </div>
+          {last10Books.map((book, index) => (
+            <div className="book" key={index} data-genre={book.genre}>
+              <img src={`/images/${book.bookImage}`} alt={book.title} />
+              <h2>{book.title}</h2>
+              <p>Author: {book.author}</p>
+              <p>Genre: {book.genre}</p>
+              <button>Add to Cart</button>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -143,4 +114,4 @@ function home2() {
   );
 }
 
-export default home2;
+export default Home2;
