@@ -34,7 +34,7 @@ function BookDetails({ match }) {
         const data = await response.json();
         setBookDetails(data.data.Book);
         console.log(data.data.Book);
-        incrementRentedBooksCount(); // Update the state with book details
+        // Update the state with book details
       } else {
         console.error("Failed to fetch book details");
       }
@@ -45,6 +45,7 @@ function BookDetails({ match }) {
 
   const handleRentedBook = () => {
     alert("Thank you for renting the book");
+    incrementRentedBooksCount();
   };
 
   return (

@@ -7,11 +7,10 @@ import ProtectedRoute from "./../components/ProtectedRoute";
 import { useBookContext } from "./../context/bookContext";
 
 function RentBook() {
+  const { BooksPutOnRent } = useBookContext();
   useEffect(() => {
     document.title = "Rent A Book";
   }, []);
-
-  const { BooksPutOnRent } = useBookContext();
 
   const [formData, setFormData] = useState({
     title: "",
@@ -51,7 +50,8 @@ function RentBook() {
       const response = await fetch("http://127.0.0.1:5000/api/book/addbooks", {
         method: "POST",
         headers: {
-          Authorization: `Bearer ${token}`, // Set the Authorization header properly
+          Authorization: `Bearer ${token}`,
+          // Set the Authorization header properly
         },
         body: formDataToSend,
       });

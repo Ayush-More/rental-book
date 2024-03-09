@@ -54,7 +54,7 @@ function Home2() {
         <div className="book-container">
           {/* Book entries for Frequently Rented Books */}
           <div className="book" data-genre="Non-Fiction">
-            <img src="/images/books/book1.jpeg" alt="Book 1" />
+            <img src="/images/book1.jpeg" alt="Book 1" />
             <h2>Einstein</h2>
             <p>Author: Walter Isaacson</p>
             <p>Genre: Non-Fiction</p>
@@ -62,7 +62,7 @@ function Home2() {
           </div>
 
           <div className="book" data-genre="Fiction">
-            <img src="/images/books/book2.jpg" alt="Book 2" />
+            <img src="/images/book2.jpg" alt="Book 2" />
             <h2>Dust on the Mountain</h2>
             <p>Author: Ruskin Bond</p>
             <p>Genre: Fiction</p>
@@ -70,7 +70,7 @@ function Home2() {
           </div>
 
           <div className="book" data-genre="Fiction">
-            <img src="/images/books/book3.jpeg" alt="Book 3" />
+            <img src="/images/book3.jpeg" alt="Book 3" />
             <h2>The Great Gatsby</h2>
             <p>Author: F. Scott Fitzgerald</p>
             <p>Genre: Fiction</p>
@@ -78,7 +78,7 @@ function Home2() {
           </div>
 
           <div className="book" data-genre="Non-Fiction">
-            <img src="/images/books/book4.jpg" alt="Book 4" />
+            <img src="/images/book4.jpg" alt="Book 4" />
             <h2>Wings of Fire</h2>
             <p>Author: A.P.J. Abdul Kalam</p>
             <p>Genre: Non-Fiction</p>
@@ -86,7 +86,7 @@ function Home2() {
           </div>
 
           <div className="book" data-genre="Fiction">
-            <img src="/images/books/book5.jpeg" alt="Book 5" />
+            <img src="/images/book5.jpeg" alt="Book 5" />
             <h2>Doglapan</h2>
             <p>Author: Ashneer Grover</p>
             <p>Genre: Fiction</p>
@@ -94,7 +94,7 @@ function Home2() {
           </div>
 
           <div className="book" data-genre="Fiction">
-            <img src="/images/books/book6.jpeg" alt="To Kill a Mockingbird" />
+            <img src="/images/book6.jpeg" alt="To Kill a Mockingbird" />
             <h2>To Kill a Mockingbird</h2>
             <p>Author: Harper Lee</p>
             <p>Genre: Fiction</p>
@@ -102,7 +102,7 @@ function Home2() {
           </div>
 
           <div className="book" data-genre="Fiction">
-            <img src="/images/books/book7.jpeg" alt="1984" />
+            <img src="/images/book7.jpeg" alt="1984" />
             <h2>1984</h2>
             <p>Author: George Orwell</p>
             <p>Genre: Fiction</p>

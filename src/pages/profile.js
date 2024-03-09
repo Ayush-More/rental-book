@@ -7,12 +7,13 @@ import { useBookContext } from "./../context/bookContext";
 
 function Profile() {
   const [userData, setuserdata] = useState([]);
+  const { rentedBooksCount, booksRented } = useBookContext();
   useEffect(() => {
     document.title = "Profile";
     userDetails();
-  }, []);
+  }, [rentedBooksCount, booksRented]);
   console.log(userData);
-  const { rentedBooksCount, booksRented } = useBookContext();
+
   console.log(rentedBooksCount);
   console.log(booksRented);
   const userDetails = async () => {

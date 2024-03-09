@@ -1,18 +1,23 @@
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useState , useEffect } from "react";
 
 const BookContext = createContext();
 
 function BookProvider({ children }) {
   const [rentedBooksCount, setRentedBooksCount] = useState(0);
-  const [booksRented , setbooksRented] = useState(0);
+  const [booksRented , setBooksRented] = useState(0);
 
   const incrementRentedBooksCount = () => {
     setRentedBooksCount((prevCount) => prevCount + 1);
+    console.log(rentedBooksCount);
   };
 
   const BooksPutOnRent = ()=>{
-    setbooksRented((prevCount) => prevCount +1);
+    setBooksRented((prevCount) => prevCount +1);
+    console.log(booksRented);
   }
+  useEffect(() => {
+    console.log(booksRented);
+  }, [booksRented]);
   return (
      <BookContext.Provider value={{ rentedBooksCount, incrementRentedBooksCount , booksRented , BooksPutOnRent}}>
       {children}
